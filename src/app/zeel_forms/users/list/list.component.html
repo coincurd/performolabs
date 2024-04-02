@@ -1,0 +1,68 @@
+<div>
+    <button mat-flat-button matStepperNext class="daxa" style="float: right;" routerLink="/users">+ Add New
+        User</button>
+</div>
+<br>
+<br>
+<br>
+
+
+<mat-card class="daxa-card users-card mb-25 border-radius bg-white border-none d-block"
+    [class.component-dark-theme]="themeService.isDark()" [class.rtl-enabled]="themeService.isRTLEnabled()">
+
+    <mat-card-title>
+        <h5 class="mt-0 mb-0">
+            Users
+        </h5>
+    </mat-card-title>
+
+    <mat-card-content>
+        <div class="users-table">
+            <div class="table-responsive">
+                <table mat-table [dataSource]="dataSource" matSort>
+
+                    <!-- ID Column -->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> S.No </th>
+                        <td mat-cell *matCellDef="let i = index;"> {{ (paginator.pageIndex * paginator.pageSize) + (i+1)
+                            }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="display_name">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 50px"> User Name </th>
+                        <td mat-cell *matCellDef="let row"> {{row.display_name }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="mobileno">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> Mobile No </th>
+                        <td mat-cell *matCellDef="let row"> {{row.mobileno }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> Status </th>
+                        <td mat-cell *matCellDef="let row"> {{ row.status == '1' ? 'Enabled' : 'Disabled' }} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="edit">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> Edit </th>
+                        <td mat-cell *matCellDef="let row">
+
+                            <button mat-button [routerLink]="[ '/users' ]" [queryParams]="{ id: row.id}">
+                                Edit
+                            </button>
+
+                        </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </tr>
+
+                </table>
+
+            </div>
+            <mat-paginator [pageSizeOptions]="[15,30,50,100,200]"></mat-paginator>
+        </div>
+    </mat-card-content>
+</mat-card>

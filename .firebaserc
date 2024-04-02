@@ -1,0 +1,43 @@
+{
+  "projects": {
+    "texpack-cloud": "texpack-cloud",
+    "smart-manager-ebe21": "smart-manager-ebe21"
+  },
+  "targets": {
+    "texpack-cloud": {
+      "hosting": {
+        "texpack-admin": [
+          "texpack-admin"
+        ],
+        "texpack-cloud": [
+          "texpack-cloud"
+        ],
+        "texpack-salespro": [
+          "texpack-salespro"
+        ],
+        "texpack-labdip": [
+          "texpack-labdip"
+        ],
+        "texpack-smartmanager": [
+          "texpack-smartmanager"
+        ],
+        "texpack-workereff": [
+          "texpack-workereff"
+        ],
+        "texpack-barcode": [
+          "texpack-barcode"
+        ],
+        "texpack-eastman": [
+          "texpack-eastman"
+        ]
+      }
+    },
+    "smart-manager-ebe21": {
+      "hosting": {
+        "smart-manager-ebe21": [
+          "smart-manager-ebe21"
+        ]
+      }
+    }
+  }
+}

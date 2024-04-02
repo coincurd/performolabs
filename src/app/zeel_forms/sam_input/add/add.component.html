@@ -1,0 +1,138 @@
+<div class="row">
+    <div class="col-xxl-12 col-xxxl-12">
+        <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block">
+            <mat-card-header>
+                <mat-card-title>
+                    <h5 class="mt-0 mb-0">
+                        Update SAM
+                    </h5>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form name="SAMInputForm" id="SAMInputForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Company
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Company
+                                    </mat-label>
+                                    <input matInput id="cmp_name" name="cmp_name" disabled
+                                        [(ngModel)]="SAMInputFormData.cmp_name">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Style
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Style
+                                    </mat-label>
+                                    <input matInput id="style_name" name="style_name" disabled
+                                        [(ngModel)]="SAMInputFormData.style_name">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Cutting Sam
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Cutting Sam
+                                    </mat-label>
+                                    <input matInput id="cutting_sam" name="cutting_sam"
+                                        [(ngModel)]="SAMInputFormData.cutting_sam">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Cutting CM
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Cutting CM
+                                    </mat-label>
+                                    <input matInput id="cutting_cm" name="cutting_cm"
+                                        [(ngModel)]="SAMInputFormData.cutting_cm">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Sewing SAM
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Sewing SAM
+                                    </mat-label>
+                                    <input matInput id="sewing_sam" name="sewing_sam"
+                                        [(ngModel)]="SAMInputFormData.sewing_sam">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Sewing CM
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Sewing CM
+                                    </mat-label>
+                                    <input matInput id="sewing_cm" name="sewing_cm"
+                                        [(ngModel)]="SAMInputFormData.sewing_cm">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    CTN Packing SAM
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        CTN Packing SAM
+                                    </mat-label>
+                                    <input matInput id="ctn_packing_sam" name="ctn_packing_sam"
+                                        [(ngModel)]="SAMInputFormData.ctn_packing_sam">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    CTN Packing CM
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        CTN Packing CM
+                                    </mat-label>
+                                    <input matInput id="ctn_packing_cm" name="ctn_packing_cm"
+                                        [(ngModel)]="SAMInputFormData.ctn_packing_cm">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="btn-box">
+                    <button (click)="save()" mat-button>
+                        Update
+                    </button>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
