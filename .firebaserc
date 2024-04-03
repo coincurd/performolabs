@@ -1,41 +1,12 @@
 {
   "projects": {
-    "texpack-cloud": "texpack-cloud",
-    "smart-manager-ebe21": "smart-manager-ebe21"
+    "performolabs-9643f": "performolabs-9643f"
   },
   "targets": {
-    "texpack-cloud": {
+    "performolabs-9643f": {
       "hosting": {
-        "texpack-admin": [
-          "texpack-admin"
-        ],
-        "texpack-cloud": [
-          "texpack-cloud"
-        ],
-        "texpack-salespro": [
-          "texpack-salespro"
-        ],
-        "texpack-labdip": [
-          "texpack-labdip"
-        ],
-        "texpack-smartmanager": [
-          "texpack-smartmanager"
-        ],
-        "texpack-workereff": [
-          "texpack-workereff"
-        ],
-        "texpack-barcode": [
-          "texpack-barcode"
-        ],
-        "texpack-eastman": [
-          "texpack-eastman"
-        ]
-      }
-    },
-    "smart-manager-ebe21": {
-      "hosting": {
-        "smart-manager-ebe21": [
-          "smart-manager-ebe21"
+        "performolabs-9643f": [
+          "performolabs-9643f"
         ]
       }
     }

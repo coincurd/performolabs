@@ -1,7 +1,7 @@
 {
   "hosting": [
     {
-      "target": "smart-manager-ebe21",
+      "target": "performolabs-9643f",
       "public": "dist/zeel_new/browser",
       "ignore": [
         "firebase.json",

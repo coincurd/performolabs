@@ -15,13 +15,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCI2-n7mgmnaL5eXYUPsICRnMLdO2Fl6Qc",
-  authDomain: "smart-manager-ebe21.firebaseapp.com",
-  projectId: "smart-manager-ebe21",
-  storageBucket: "smart-manager-ebe21.appspot.com",
-  messagingSenderId: "406121763483",
-  appId: "1:406121763483:web:f23e459a8a902767cd2c3e",
-  measurementId: "G-14YJ141EM4"
+    apiKey: "AIzaSyDQ4QsQ5w2xJL9clUPsvhWRbYT1fFyCuec",
+    authDomain: "performolabs-9643f.firebaseapp.com",
+    projectId: "performolabs-9643f",
+    storageBucket: "performolabs-9643f.appspot.com",
+    messagingSenderId: "517522912277",
+    appId: "1:517522912277:web:b1a8253009e63fe1aeca1c",
+    measurementId: "G-Y12640164E"
 };
 
 // Initialize Firebase
