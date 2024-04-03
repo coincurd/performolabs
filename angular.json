@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/zeel_new/browser",
+                        "outputPath": "dist/zeel_new",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": [
