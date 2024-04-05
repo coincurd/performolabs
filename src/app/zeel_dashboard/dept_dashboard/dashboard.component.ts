@@ -420,9 +420,6 @@ export class ZeelDashboardComponent {
         console.log(environment);
 
 
-        this.HttpService.postData('masters/CompanySB', {}).subscribe((response: any) => {
-            this.companies = response.result;
-        });
 
         this.getData();
     }
@@ -437,6 +434,9 @@ export class ZeelDashboardComponent {
      */
     ngOnInit(): void {
 
+        this.HttpService.postData('masters/CompanySB', {}).subscribe((response: any) => {
+            this.companies = response.result;
+        });
 
     }
 
