@@ -23,7 +23,7 @@ import { NgFor } from '@angular/common';
     selector: 'app-dashboard',
     standalone: true,
     imports: [RouterLink, NgIf, MatNativeDateModule, NgFor, MatCardModule, MatInputModule, MatSelectModule, MatFormFieldModule, MatDatepickerModule, NgClass, MatTableModule, HttpClientModule, MatButtonModule, FormsModule],
-    templateUrl: './dashboard.component.html',
+    templateUrl: './testing.component.html',
     styleUrl: './dashboard.component.scss',
     animations: [
         trigger("listAnimation", [

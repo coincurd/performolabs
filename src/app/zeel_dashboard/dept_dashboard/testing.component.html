@@ -1,0 +1,3227 @@
+<div class="row">
+    <div class="col-xxl-12 col-xxxl-12">
+        <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block">
+            <mat-card-content>
+                <form name="filterForm" id="filterForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="mb-25">
+                                <mat-form-field>
+                                    <mat-label>Company</mat-label>
+                                    <mat-select id="username" name="username" [(ngModel)]="FilterData.cmp_id">
+                                        <mat-option *ngFor="let c of companies" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="mb-25">
+                                <mat-form-field>
+                                    <mat-label>Period</mat-label>
+                                    <mat-select id="period" name="period" [(ngModel)]="FilterData.period">
+                                        <mat-option value="for_period">For Period</mat-option>
+                                        <mat-option value="for_date">For Date</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-2" *ngIf="FilterData.period === 'for_period'">
+                            <div class="mb-25">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>From Date</mat-label>
+                                    <input matInput [matDatepicker]="picker1" id="from_date" name="from_date"
+                                        [(ngModel)]="FilterData.from_date">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="mb-25">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>To Date</mat-label>
+                                    <input matInput [matDatepicker]="picker2" id="to_date" name="to_date"
+                                        [(ngModel)]="FilterData.to_date">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-1">
+                            <button mat-flat-button class="daxa" (click)="getData()">Filter</button>
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+
+
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<div
+    *ngIf="!CuttingCostDetClicked && !ReCuttingClicked && !CuttingDownTimeClicked && !CuttingFabUtlzClicked1 && !QualityDetClicked && !QualityCostDatewiseClicked && !QualityDownTimeDatewiseClicked && !FabricCostClicked && !CuttingDownTimeDatewiseClicked && !CuttingCostDeDatewisetClicked && !SewingEffBuildingClicked && !SewingCostBuildingClicked && !SewingDhuBuildingClicked && !SewingMisPcsBuildingClicked && !HrAbsentBuildingClicked && !FinishingWipBuildingClicked && !HrUnplannedBuildingClicked && !TrimsDownTimeDatewiseClicked && !MntDownTimeDatewiseClicked && !SewingRejBuildingClicked && !QualityRftBuildingClicked && !HrMmrBuildingClicked && !HrBudgetBuildingClicked && !HrBudgetCostBuildingClicked && !IndEngCpmBuildingClicked && !ManagementKPIClicked && !FinsingCsgBuildingClicked && !DespatchWipClicked && !HrAtrBuildingClicked && !TrimsUnusedGroupClicked">
+
+
+
+    <mat-card *ngIf="!widClicked">
+
+        <mat-card-content [@slideInOut]>
+
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="big-box bg-blue grid gap-2 grid-rows-2" (click)="CuttingKpiData('cutting_kpi')">
+                        <img src="assets/dashboard_icons/scissors.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">CUTTING</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="big-box bg-indigo grid gap-2 grid-cols-2" (click)="SewingKpiData('sewing_kpi')">
+                        <img fxFlex src="assets/dashboard_icons/sewing.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">SEWING</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="big-box bg-pink grid gap-2 grid-cols-2" (click)="QualityKpiData('quality_kpi')">
+                        <img fxFlex src="assets/dashboard_icons/badge.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">QUALITY</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="big-box bg-yellow grid gap-2 grid-cols-2" (click)="HrKpiData('hr_kpi')">
+                        <img fxFlex src="assets/dashboard_icons/online-interview.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">HR </h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-green" (click)="IndEngKpiData('ind_eng_kpi')">
+                        <img src="assets/dashboard_icons/energy.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">INDUSTRIAL ENGINEERING </h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-purple" (click)="FabricKpiData('fabric_kpi')">
+                        <img src="assets/dashboard_icons/fiber.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">FABRIC</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-orange" (click)="finsihingKpiData('finishing_kpi')">
+                        <img src="assets/dashboard_icons/flag.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">FINISHING</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-red" (click)="DespatchKpiData('despatch_kpi')">
+                        <img src="assets/dashboard_icons/delivery.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">DISPATCH</h5>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-cyan" (click)="TrimsKpiData('trims_kpi')">
+                        <img src="assets/dashboard_icons/buttons.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">TRIMS STORE</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-teal" (click)="MntKpiData('mnt_kpi')">
+                        <img src="assets/dashboard_icons/repair-service.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">MAINTENANCE</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div class="big-box bg-sky" (click)="ManagementKpiData()">
+                        <img src="assets/dashboard_icons/repair-service.png" alt="">
+                        <h5 style=" color:white; position: relative; top: -10px;">MANAGEMENT</h5>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-xxl-3 col-sm-6">
+                    <div style="visibility: hidden;" class="big-box bg-primary">
+                        <h5> </h5>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card-content>
+
+    </mat-card>
+
+    <!-- GRID UPDATES -->
+
+    <div class="row" *ngIf="FilterData.wid_data === 'cutting_kpi' && widClicked">
+
+
+        <div class="col-md-12 col-lg-12 col-xxxl-12">
+
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                (click)="widClicked=false">Back</button>
+
+        </div>
+
+
+
+        <div class="col-md-12 col-lg-6 col-xxxl-6">
+
+            <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                (click)="CuttingKpiDetail('cutting_downtime','','','','')">
+                <mat-card-content>
+                    <h5 class="text-white">
+                        DOWN TIME
+                    </h5>
+                    <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TODAY LOSS
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ today_downtime }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TILLDATE
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ tilldate_downtime }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TODAY LOSS
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ today_cost_loss }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TOTAL LOSS
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ tilldate_cost_loss }}
+                            </span>
+                        </div>
+                    </div>
+
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+
+            <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
+                (click)="CuttingKpiDetail('re_cuttings','','','','')">
+                <mat-card-content>
+                    <h5 class="text-white">
+                        RE CUTTINGS / MISTAKE PANEL
+                    </h5>
+                    <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TODAY RECUT
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ today_recut }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TILLDATE RECUT
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ total_recut }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TODAY RECUT %
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ today_recut_perc }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                TILLDATE RECUT %
+                            </span>
+                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
+                                {{ total_recut_perc }}
+                            </span>
+                        </div>
+                    </div>
+
+
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+
+        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+
+            <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                (click)="CuttingKpiDetail('cutting_cost','','','','')">
+                <mat-card-content>
+                    <h5 class="text-white">
+                        CUTTING COST
+                    </h5>
+                    <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                PROD
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ cutting_prod }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                EXPENSE
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ cutting_exp }}
+                            </span>
+                        </div>
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                REVENUE
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ cutting_rev }}
+                            </span>
+                        </div>
+
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                P/L
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ cutting_till_pl }}
+                            </span>
+                        </div>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+
+
+
+        </div>
+
+        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+
+            <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
+                (click)="CuttingKpiDetail('fab_utliz1','','','','')">
+                <mat-card-content>
+                    <h5 class="text-white">
+                        FABRIC UTILISATION
+                    </h5>
+                    <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <span class="sub-title d-block text-white">
+                                COST SAVINGS/EXCESS
+                            </span>
+                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                                {{ fab_cost_savings }}
+                            </span>
+                        </div>
+
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'sewing_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                        (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                EFFICIENCY %
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TODAY TARGET
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ today_target }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TODAY ACTUAL
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ today_eff }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE TARGET
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ upto_date_target }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE ACTUAL
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ upto_date_eff }}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+
+                    </mat-card>
+
+
+                </div>
+
+                <div class="col-md-6 col-lg-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                        (click)="SewingKpiDetail('sewing_cost_buiding','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                SEWEING COST
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        PROD
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_prod }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        EXPENSE
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_expense }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        REVENUE
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_revenue }}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        P/L
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_pl }}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE P/L
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_till_pl }}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6">
+            <div class="row">
+                <div class="col-md-6 col-xxxl-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
+                        (click)="SewingKpiDetail('sewing_dhu_building','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                DHU %
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        INSPECTED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_inspected }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        PASSED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_pass }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        DEFECT
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_defect }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        DHU %
+                                    </span>
+                                    <span class="number d-block text-center text-white fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_dhu_perc }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE DHU %
+                                    </span>
+                                    <span class="number d-block text-center text-white fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ till_sew_dhu_perc }}
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+
+                <div class="col-md-6 col-xxxl-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
+                        (click)="SewingKpiDetail('sewing_rej_building','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                REJECTION
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        INSPECTED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_inspected }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        PASSED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_pass }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        REJECTED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_rej }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        REJ %
+                                    </span>
+                                    <span class="number d-block text-center text-white fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ sew_rej_perc }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE REJ %
+                                    </span>
+                                    <span class="number d-block text-center text-white fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ till_rej_perc }}
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6">
+            <div class="row">
+                <div class="col-md-6 col-xxxl-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
+                        (click)="SewingKpiDetail('sewing_mis_pcs_building','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                Sewing Line WIP
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        CUTTING LOADED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ cutting_loaded }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        PACKING FG
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ packing_fg }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        INLINE WIP
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ inline_wip }}
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'quality_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                        (click)="QualityKpiDetail('quality_downtime','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                DOWN TIME
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TODAY
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_today_downtime }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_tilldate_downtime }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TODAY LOSS
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_today_cost_loss }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE LOSS
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_tilldate_cost_loss }}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+
+                    </mat-card>
+
+
+                </div>
+
+                <div class="col-md-6 col-lg-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                        (click)="QualityKpiDetail('quality_cost_datewise','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                QUALITY COST
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        INSPECTED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ inspected_qty }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        EXPENSE
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_exp }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        COST
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ quality_cost }}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE COST
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ tilldate_quality_cost }}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6">
+            <div class="row">
+                <div class="col-md-6 col-xxxl-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
+                        (click)="QualityKpiDetail('quality_rft_buiding','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                RFT
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        INSPECTED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_inspected }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        PASSED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_pass }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        RFT %
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_rft_perc }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE RFT %
+                                    </span>
+                                    <span class="number d-block text-center text-white fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ tilldate_qc_rft_perc }}
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+
+                <div class="col-md-6 col-xxxl-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
+                        (click)="SewingKpiDetail('sewing_dhu_building','','','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                DHU %
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        INSPECTED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_inspected }}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        PASSED
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_pass }}
+                                    </span>
+                                </div>
+
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        DEFECT
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_defect }}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        DHU %
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ qc_dhu_perc }}
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        Tilldate DHU %
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ till_qc_dhu_perc }}
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </mat-card-content>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'hr_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                    (click)="HrKpiDetail('htatr_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            ATTRITION
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ strength }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRESENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ present }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE LEFT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ tilldate_left }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE ATR %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ tilldate_atr }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                    (click)="HrKpiDetail('absentism_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            ABSENTISM
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ strength }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRESENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ present }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    ABSENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ absent }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    ABSENT %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ absent_perc }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE ABSENT %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ tilldate_absent_perc }}
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-10 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-blue border-none d-block"
+                    (click)="HrKpiDetail('hrunplanned_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            UN PLANNED LEAVES
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ strength }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    ABSENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ absent }}
+                                </span>
+                            </div>
+
+                            <div style="margin-right:5px">
+                                <span class="sub-title d-block text-white">
+                                    TODAY PLANNED %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ planned_perc }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE PLANNED %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ tilldate_planned_perc }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY UNPLANNED %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ un_planned_perc }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE UNPLANNED %
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ tilldate_un_planned_perc }}
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
+                    (click)="HrKpiDetail('hrmmr_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            MMR
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ strength }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRESENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ present }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    MACHINE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ operators_present }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    MMR
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ mmr }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
+                    (click)="HrKpiDetail('hrbudget_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            MAN POWER (vs) ACTUAL
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ strength }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRESENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ present }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    BUDGET
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ sanction }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    DIFF
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ sanction_diff }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
+                    (click)="HrKpiDetail('hrbudgetcost_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            MAN POWER COST (vs) BUDGET
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ strength }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRESENT COST
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ total_cost }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    BUDGET COST
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ sanction_cost_budget }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    DIFF
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ sanction_cost_diff }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'ind_eng_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                    (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            EFFICIENCY %
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY TARGET
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_eng_today_target }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY ACTUAL
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_eng_today_eff }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE TARGET
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_eng_upto_date_target }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE TARGET
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_eng_upto_date_eff }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
+                    (click)="HrKpiDetail('hrmmr_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            MMR
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    STRENGTH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_strength }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRESENT
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_present }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    MACHINE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_operators_present }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    MMR
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_mmr }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                    (click)="IndEngKpiDetail('ind_eng_cpm_buiding','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            COST PER MINUTE
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PROD
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_prod_qty }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    EXPENSE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_today_expense }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRODUCED MINS
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_today_produced_mins }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    CPM
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_today_cpm }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'fabric_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                    (click)="FabricKpiDetail('fabric_cost')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            FABRIC COST
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY QTY
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ total_qty }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY COST
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ total_amt }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE QTY
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ till_date_qty }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE COST
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ till_date_amt }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            DOWNTIME
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fab_today_downtime }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fab_tilldate_downtime }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY LOSS
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fab_today_cost_loss }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TOTAL LOSS
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fab_tilldate_cost_loss }}
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'finishing_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                    (click)="FinishingKpiDetails('wip_control_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            WIP CONTROL
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PACKING FG
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fin_packing_fg }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    ISSUE TO WH
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fin_issue_wh }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    FINISHING WIP
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ fin_wip }}
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
+                    (click)="FinishingKpiDetails('cost_per_garment_building','','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            COST PER GARMENT
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PROD
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ csg_prod }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    REVENUE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ csg_revenue }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    EXPENSE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ csg_expense }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PL
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ csg_pl }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                    (click)="IndEngKpiDetail('ind_eng_cpm_buiding','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            COST PER MINUTE
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PROD
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_prod_qty }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    EXPENSE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_today_expense }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    PRODUCED MINS
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_today_produced_mins }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    CPM
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ ind_today_cpm }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div *ngIf="FilterData.wid_data === 'despatch_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                        (click)="DespatchKpiDetail('despatch_wip')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                WIP CONTROL
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        WH Inward
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ warehouse_inward }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        Dispatch Qty
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ dispatch_qty }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        WH Stock
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ balance }}
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </mat-card-content>
+
+                    </mat-card>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div *ngIf="FilterData.wid_data === 'trims_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                    (click)="TrimsKpiDetail('trims_downtime','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            DOWN TIME
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ trims_today_downtime }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TILLDATE
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ trims_tilldate_downtime }}
+                                </span>
+                            </div>
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TODAY LOSS
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ trims_today_cost_loss }}
+                                </span>
+                            </div>
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    TOTAL LOSS
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ trims_tilldate_cost_loss }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="col-md-6 col-lg-12">
+
+                <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
+                    (click)="TrimsKpiDetail('trims_unused_group','','')">
+                    <mat-card-content>
+                        <h5 class="text-white">
+                            Un Used Inventory
+                        </h5>
+                        <div class="sales-overview-info d-flex align-items-center justify-content-between">
+
+                            <div>
+                                <span class="sub-title d-block text-white">
+                                    Cost
+                                </span>
+                                <span class="number d-block text-white text-center fw-medium lh-1"
+                                    style="margin-top: 5px;">
+                                    {{ inventory_cost }}
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div *ngIf="FilterData.wid_data === 'mnt_kpi' && widClicked" class="row">
+
+        <div class="col-md-12">
+            <div class="text-end mt-2">
+
+                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+                    (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 col-xxxl-6 gap-4">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+
+                    <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
+                        (click)="MntKpiDetail('mnt_downtime','')">
+                        <mat-card-content>
+                            <h5 class="text-white">
+                                DOWN TIME
+                            </h5>
+                            <div class="sales-overview-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TODAY
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ mnt_today_downtime }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ mnt_tilldate_downtime }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TODAY LOSS
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ mnt_today_cost_loss }}
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="sub-title d-block text-white">
+                                        TILLDATE LOSS
+                                    </span>
+                                    <span class="number d-block text-white text-center fw-medium lh-1"
+                                        style="margin-top: 5px;">
+                                        {{ mnt_tilldate_cost_loss }}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </mat-card-content>
+
+                    </mat-card>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div *ngIf="FilterData.wid_data === 'fabric_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-purple" (click)="FabricKpiDetail('fabric_cost')">
+
+                            <p class="text-center p-2 font-bold"> FABRIC COST </p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY QTY</h5>
+                                    <h2> {{ total_qty }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY COST</h5>
+                                    <h2> {{ total_amt }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE QTY</h5>
+                                    <h2> {{ till_date_qty }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE COST</h5>
+                                    <h2> {{ till_date_amt }}</h2>
+
+                                </span>
+
+                            </div>
+
+                            <h5 fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="space-between center">
+
+              <span fxFlex>Today Qty  <br> {{ total_qty }} </span>
+              <span fxFlex>Today Amt  <br> {{ total_amt }} </span>
+              <span fxFlex>Tilldate Qty   <br> {{ till_date_qty }}</span>
+              <span fxFlex>Tilldate Amt  <br> {{ till_date_amt }}</span>
+
+              </h5>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-red">
+
+                            <p class="text-center p-2 font-bold"> DOWNTIME</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY </h5>
+                                    <h2> {{ fab_today_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE </h5>
+                                    <h2> {{ fab_tilldate_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY LOSS</h5>
+                                    <h2> {{ fab_today_cost_loss }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TOTAL LOSS </h5>
+                                    <h2> {{ fab_tilldate_cost_loss }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div fxLayoutGap="8px" fxLayout="row">
+
+          <div fxFlex class="small-box bg-orange">
+
+             <p class="text-center p-2 font-bold"> INSPECTION</p>
+             <p class="text-center p-2 font-bold"> {{ efficiency }} </p>
+
+          </div>
+
+        </div>
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+
+    <!-- <div *ngIf="FilterData.wid_data === 'quality_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-red" (click)="QualityKpiDetail('quality_downtime','','','')">
+
+                            <p class="text-center p-2 font-bold"> DOWN TIME</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY</h5>
+                                    <h2> {{ qc_today_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE</h5>
+                                    <h2> {{ qc_tilldate_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY LOSS</h5>
+                                    <h2> {{ qc_today_cost_loss }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE LOSS</h5>
+                                    <h2> {{ qc_tilldate_cost_loss }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-purple"
+                            (click)="QualityKpiDetail('quality_cost_datewise','','','')">
+
+                            <p class="text-center p-2 font-bold"> QUALITY COST </p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> INSPECTED</h5>
+                                    <h2> {{ inspected_qty }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>EXPENSE</h5>
+                                    <h2> {{ qc_exp }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> COST</h5>
+                                    <h2> {{ quality_cost }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE COST</h5>
+                                    <h2> {{ tilldate_quality_cost }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-green"
+                            (click)="QualityKpiDetail('quality_rft_buiding','','','')">
+
+                            <p class="text-center p-2 font-bold"> RFT</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> INSPECTED</h5>
+                                    <h2> {{ qc_inspected }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PASSED</h5>
+                                    <h2> {{ qc_pass }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> RFT % </h5>
+                                    <h2> {{ qc_rft_perc }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE RFT % </h5>
+                                    <h2> {{ tilldate_qc_rft_perc }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-orange"
+                            (click)="SewingKpiDetail('sewing_dhu_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> DHU %</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> INSPECTED</h5>
+                                    <h2> {{ qc_inspected }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PASSED</h5>
+                                    <h2> {{ qc_pass }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> DEFECT</h5>
+                                    <h2> {{ qc_defect }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> DHU %</h5>
+                                    <h2> {{ qc_dhu_perc }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>Tilldate DHU %</h5>
+                                    <h2> {{ till_qc_dhu_perc }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+
+    <!-- <div *ngIf="FilterData.wid_data === 'finishing_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-purple"
+                            (click)="FinishingKpiDetails('wip_control_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> WIP CONTROL </p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PACKING FG</h5>
+                                    <h2> {{ fin_packing_fg }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>ISSUE TO WH</h5>
+                                    <h2> {{ fin_issue_wh }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> FINISHING WIP</h5>
+                                    <h2> {{ fin_wip }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-red"
+                            (click)="FinishingKpiDetails('cost_per_garment_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> COST PER GARMENT</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PROD</h5>
+                                    <h2> {{ csg_prod }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>REVENUE</h5>
+                                    <h2> {{ csg_revenue }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>EXPENSE</h5>
+                                    <h2> {{ csg_expense }}</h2>
+
+                                </span>
+                                <span class="flex flex-col ">
+
+                                    <h5>PL</h5>
+                                    <h2> {{ csg_pl }}</h2>
+
+                                </span>
+
+                                <span fxFlex fxLayoutGap="15px">
+
+              <h5>TILLDATE PL</h5>
+              <h2> {{ csg_tilldate_pl }}</h2>
+
+            </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-orange">
+
+                            <p class="text-center p-2 font-bold"> AQL</p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+
+    <!-- <div *ngIf="FilterData.wid_data === 'despatch_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-red" (click)="DespatchKpiDetail('despatch_wip')">
+
+                            <p class="text-center p-2 font-bold"> WIP CONTROL</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5>WH Inward</h5>
+                                    <h2> {{ warehouse_inward }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>Dispatch Qty</h5>
+                                    <h2> {{ dispatch_qty }}</h2>
+
+                                </span>
+
+                                <span fxFlex fxLayoutGap="15px">
+
+              <h5>Dispatch WIP</h5>
+              <h2> {{ dispatch_wip }}</h2>
+
+            </span>
+                                <span class="flex flex-col ">
+
+                                    <h5>WH Stock</h5>
+                                    <h2> {{ balance }}</h2>
+
+                                </span>
+
+                                <span fxFlex fxLayoutGap="15px">
+
+              <h5>TILLDATE PL</h5>
+              <h2> {{ csg_tilldate_pl }}</h2>
+
+            </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+    <!-- <div *ngIf="FilterData.wid_data === 'trims_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-red" (click)="TrimsKpiDetail('trims_downtime','','')">
+
+                            <p class="text-center p-2 font-bold"> DOWN TIME</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY </h5>
+                                    <h2> {{ trims_today_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE </h5>
+                                    <h2> {{ trims_tilldate_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY LOSS</h5>
+                                    <h2> {{ trims_today_cost_loss }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TOTAL LOSS </h5>
+                                    <h2> {{ trims_tilldate_cost_loss }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-cyan" (click)="TrimsKpiDetail('trims_unused_group','','')">
+
+                            <p class="text-center p-2 font-bold"> Un Used Inventory</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> Cost </h5>
+                                    <h2> {{ inventory_cost }}</h2>
+
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-orange">
+
+           <p class="text-center p-2 font-bold"> UN USED INVENTORY</p>
+           <p class="text-center p-2 font-bold"> {{ sam_produce }}</p>
+
+        </div>
+
+                    </div>
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+    <!-- <div *ngIf="FilterData.wid_data === 'hr_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-1">
+
+                        <div fxFlex class="small-box bg-red" (click)="HrKpiDetail('htatr_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> ATTRITION</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PRESENT</h5>
+                                    <h2> {{ present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE LEFT</h5>
+                                    <h2> {{ tilldate_left }} </h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE ATR %</h5>
+                                    <h2> {{ tilldate_atr }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-cyan" (click)="HrKpiDetail('absentism_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> ABSENTISM</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PRESENT</h5>
+                                    <h2> {{ present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> ABSENT</h5>
+                                    <h2> {{ absent }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> ABSENT %</h5>
+                                    <h2> {{ absent_perc }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE ABSENT %</h5>
+                                    <h2> {{ tilldate_absent_perc }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-1 grid-rows-1">
+
+                        <div fxFlex class="small-box bg-orange" (click)="HrKpiDetail('hrunplanned_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> UN PLANNED LEAVES</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>ABSENT</h5>
+                                    <h2> {{ absent }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY PLANNED %</h5>
+                                    <h2> {{ planned_perc }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE PLANNED %</h5>
+                                    <h2> {{ tilldate_planned_perc }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY UNPLANNED %</h5>
+                                    <h2> {{ un_planned_perc }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE UNPLANNED %</h5>
+                                    <h2> {{ tilldate_un_planned_perc }}</h2>
+
+                                </span>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-3 grid-rows-1">
+
+                        <div fxFlex class="small-box bg-pink" (click)="HrKpiDetail('hrmmr_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> MMR</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PRESENT</h5>
+                                    <h2> {{ present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>MACHINE</h5>
+                                    <h2> {{ operators_present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>MMR</h5>
+                                    <h2> {{ mmr }}</h2>
+
+                                </span>
+
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-yellow" (click)="HrKpiDetail('hrbudget_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> MAN POWER (vs) ACTUAL</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PRESENT</h5>
+                                    <h2> {{ present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>BUDGET</h5>
+                                    <h2> {{ sanction }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>DIFF</h5>
+                                    <h2> {{ sanction_diff }}</h2>
+
+                                </span>
+
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-indigo" (click)="HrKpiDetail('hrbudgetcost_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> MAN POWER COST (vs) BUDGET</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PRESENT COST</h5>
+                                    <h2> {{ total_cost }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>BUDGET COST</h5>
+                                    <h2> {{ sanction_cost_budget }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>DIFF</h5>
+                                    <h2> {{ sanction_cost_diff }}</h2>
+
+                                </span>
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+    <!-- <div *ngIf="FilterData.wid_data === 'ind_eng_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false">Close</button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-purple"
+                            (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
+
+                            <p class="text-center p-2 font-bold"> EFFICIENCY %</p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY TARGET</h5>
+                                    <h2> {{ ind_eng_today_target }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY ACTUAL</h5>
+                                    <h2> {{ ind_eng_today_eff }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE TARGET</h5>
+                                    <h2> {{ ind_eng_upto_date_target }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE TARGET</h5>
+                                    <h2> {{ ind_eng_upto_date_eff }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div fxFlex class="small-box bg-cyan" (click)="HrKpiDetail('hrmmr_building','','','')">
+
+                            <p class="text-center p-2 font-bold"> MMR </p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> STRENGTH</h5>
+                                    <h2> {{ ind_strength }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>PRESENT</h5>
+                                    <h2> {{ ind_present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>MACHINE</h5>
+                                    <h2> {{ ind_operators_present }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>MMR</h5>
+                                    <h2> {{ ind_mmr }}</h2>
+
+                                </span>
+
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-orange" (click)="IndEngKpiDetail('ind_eng_cpm_buiding','','')">
+
+                            <p class="text-center p-2 font-bold"> COST PER MINUTE</p>
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> PROD</h5>
+                                    <h2> {{ ind_prod_qty }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> EXPENSE</h5>
+                                    <h2> {{ ind_today_expense }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> PRODUCED MINS</h5>
+                                    <h2> {{ ind_today_produced_mins }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>CPM </h5>
+                                    <h2> {{ ind_today_cpm }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+    <!-- <div *ngIf="FilterData.wid_data === 'mnt_kpi' && widClicked" fxFlex fxLayout="column" fxLayoutGap="15px"
+        fxLayoutAlign="center" [@slideInOut]>
+
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="15px" fxLayoutAlign="center">
+
+            <mat-card fxFlex class="p-4" fxLayoutGap="8px">
+
+                <mat-card-content>
+
+                    <div class="gap-2">
+
+                        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa" (click)="widClicked=false"></button>
+
+                    </div>
+
+
+                    <div class="grid gap-2 grid-cols-1 sm:grid-cols-2 grid-rows-2">
+
+                        <div fxFlex class="small-box bg-red" (click)="MntKpiDetail('mnt_downtime','')">
+
+                            <p class="text-center p-2 font-bold"> DOWN TIME </p>
+
+                            <div class="flex gap-2 place-content-around w-full flex-col sm:flex-row">
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY </h5>
+                                    <h2> {{ mnt_today_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TILLDATE </h5>
+                                    <h2> {{ mnt_tilldate_downtime }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5> TODAY LOSS</h5>
+                                    <h2> {{ mnt_today_cost_loss }}</h2>
+
+                                </span>
+
+                                <span class="flex flex-col ">
+
+                                    <h5>TILLDATE LOSS </h5>
+                                    <h2> {{ mnt_tilldate_cost_loss }}</h2>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div fxFlex class="small-box bg-orange">
+
+           <p class="text-center p-2 font-bold">  PREVENTIVE </p>
+           <p class="text-center p-2 font-bold"> {{ sam_produce }}</p>
+
+        </div>
+
+                    </div>
+
+                </mat-card-content>
+
+            </mat-card>
+
+        </div>
+
+    </div> -->
+
+</div>
