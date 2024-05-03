@@ -61,8 +61,6 @@
 
                 </form>
 
-
-
             </mat-card-content>
         </mat-card>
     </div>
@@ -113,7 +111,6 @@
 
             </div>
 
-
             <div class="row">
 
 
@@ -150,8 +147,6 @@
 
             </div>
 
-
-
             <div class="row">
 
 
@@ -180,11 +175,6 @@
 
 
             </div>
-
-
-
-
-
 
         </mat-card-content>
 
@@ -2335,13 +2325,17 @@
 </div>
 
 
-<div *ngIf="ReCuttingClicked" [@DataList]>
+<div class="row" *ngIf="ReCuttingClicked" [@DataList]>
 
-    <div class="row-md-12">
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
 
         <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
             (click)="ReCuttingClicked = false;widClicked=true">Close</button>
 
+    </div>
+
+
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
 
         <div style="overflow-x: scroll;">
 
@@ -2453,31 +2447,28 @@
                 <tr mat-header-row *matHeaderRowDef="RecuttingColumns;sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: RecuttingColumns;"
                     [ngClass]="row.style_no === 'TOTAL' ? 'footer_row2' : ''"></tr>
+
             </table>
 
         </div>
 
     </div>
 
-
 </div>
 
 
-<div *ngIf="CuttingFabUtlzClicked1" [@DataList]>
+
+<div class="row" *ngIf="CuttingFabUtlzClicked1" [@DataList]>
 
 
-    <div class="col-md-12">
+    <div class="col-md-12 col-lg-12 col-xxxl-12" *ngIf="!CuttingFabUtlzClicked2">
 
-        <div class="text-end mt-2" *ngIf="!CuttingFabUtlzClicked2">
+        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            (click)="CuttingFabUtlzClicked1 = false;widClicked=true">Close</button>
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="CuttingFabUtlzClicked1 = false;widClicked=true"></rc-btn> -->
+    </div>
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
-                (click)="CuttingFabUtlzClicked1 = false;widClicked=true">Close</button>
-
-
-        </div>
+    <div class="col-md-12 col-lg-12 col-xxxl-12">
 
         <div style="overflow-x: scroll;">
 
@@ -2578,9 +2569,6 @@
 
         <div *ngIf="!CuttingFabUtlzClicked3" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="CuttingFabUtlzClicked2 = false;widClicked=true"></rc-btn> -->
-
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="CuttingFabUtlzClicked2 = false;widClicked=true">Close</button>
 
@@ -2679,6 +2667,7 @@
         </div>
 
     </div>
+
 
     <div *ngIf="CuttingFabUtlzClicked3" class="p-4" fxLayoutGap="8px" fxLayout="column">
 
@@ -2786,8 +2775,8 @@
 </div>
 
 
-
 <!-- CUTTING KPI DETAIL DATA -->
+
 
 
 <!-- SEWING KPI DETAIL DATA -->
@@ -2795,12 +2784,9 @@
 
 <div *ngIf="SewingEffBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingEffFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="SewingEffBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="SewingEffBuildingClicked = false;widClicked=true">Close</button>
@@ -2993,12 +2979,9 @@
 
     </div>
 
-    <div *ngIf="SewingEffFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingEffFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingEffLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="SewingEffFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="SewingEffFloorClicked = false;widClicked=true">Close</button>
@@ -3198,7 +3181,7 @@
 
     </div>
 
-    <div *ngIf="SewingEffLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingEffLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
@@ -3412,7 +3395,7 @@
 
 <div *ngIf="SewingCostBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingCostFloorClicked" class="gap-2">
 
@@ -3546,7 +3529,7 @@
 
     </div>
 
-    <div *ngIf="SewingCostFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingCostFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingCostLineClicked" class="gap-2">
 
@@ -3678,7 +3661,7 @@
 
     </div>
 
-    <div *ngIf="SewingCostLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingCostLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
@@ -3817,7 +3800,7 @@
 
 <div *ngIf="SewingDhuBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingDhuFloorClicked" class="gap-2">
 
@@ -3943,7 +3926,7 @@
 
     </div>
 
-    <div *ngIf="SewingDhuFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingDhuFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingDhuLineClicked" class="gap-2">
 
@@ -4066,7 +4049,7 @@
 
     </div>
 
-    <div *ngIf="SewingDhuLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingDhuLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
@@ -4193,12 +4176,9 @@
 
 <div *ngIf="SewingRejBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingRejFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="SewingRejBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="SewingRejBuildingClicked = false;widClicked=true">Close</button>
@@ -4313,12 +4293,9 @@
 
     </div>
 
-    <div *ngIf="SewingRejFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingRejFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingRejLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="SewingRejFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="SewingRejFloorClicked = false;widClicked=true">Close</button>
@@ -4434,7 +4411,7 @@
 
     </div>
 
-    <div *ngIf="SewingRejLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingRejLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
@@ -4557,7 +4534,7 @@
 
 <div *ngIf="SewingMisPcsBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingMisPcsFloorClicked" class="gap-2">
 
@@ -4622,7 +4599,7 @@
 
     </div>
 
-    <div *ngIf="SewingMisPcsFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingMisPcsFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingMisPcsLineClicked" class="gap-2">
 
@@ -4685,7 +4662,7 @@
 
     </div>
 
-    <div *ngIf="SewingMisPcsLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingMisPcsLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!SewingMisPcsLotClicked" class="gap-2">
 
@@ -4751,7 +4728,7 @@
 
     </div>
 
-    <div *ngIf="SewingMisPcsLotClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="SewingMisPcsLotClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
@@ -4831,16 +4808,14 @@
 
 
 
+
+
+
 <div *ngIf="QualityDetClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityDetClicked = false;widClicked=true"></rc-btn> -->
-
-
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="QualityDetClicked = false;widClicked=true">Close</button>
@@ -4958,73 +4933,12 @@
 
 </div>
 
-<!-- <div *ngIf="QualityCostDetClicked" [@DataList]>
-
-<div class="p-4" fxLayoutGap="8px" fxLayout="column">
-
-  <div class="gap-2">
-
-    <rc-btn label="Close" icon="close" type="warn" size="small"
-      (activate)="QualityCostDetClicked = false;widClicked=true"></rc-btn>
-
-  </div>
-
-  <div style="overflow-x: scroll;" >
-
-    <table class="data_table2" fxFlex mat-table [dataSource]="QualityCostDataSource" matSort>
-
-      <ng-container matColumnDef="s_no">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let i = index;"> {{ (i+1) }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="line_no" sticky>
-        <th mat-header-cell *matHeaderCellDef style="min-width: 135px;"> Style No </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.line_no }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="expense">
-        <th mat-header-cell *matHeaderCellDef style="min-width: 60px;"> Expense </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.expense }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="pass_pcs">
-        <th mat-header-cell *matHeaderCellDef style="min-width: 135px;">Passed Pcs</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.pass_pcs }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="cost">
-        <th mat-header-cell *matHeaderCellDef style="min-width: 135px;"> Cost </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.cost }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="header-row-first-group">
-        <th mat-header-cell *matHeaderCellDef class="table_title" style="text-align: center;" [attr.colspan]="5">
-          Quality Cost For {{ this.FilterData.to_date  }}  </th>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
-
-      <tr mat-header-row *matHeaderRowDef="QualityCostColumns;sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: QualityCostColumns;"></tr>
-    </table>
-
-  </div>
-
-</div>
-
-
-</div> -->
-
 
 <div *ngIf="QualityDownTimeDatewiseClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!QualityDownTimeClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityDownTimeDatewiseClicked = false;widClicked=true"></rc-btn> -->
 
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
@@ -5105,12 +5019,9 @@
 
     </div>
 
-    <div *ngIf="QualityDownTimeClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="QualityDownTimeClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityDownTimeClicked = false;widClicked=true"></rc-btn> -->
 
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
@@ -5199,13 +5110,9 @@
 
 <div *ngIf="QualityRftBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!QualityRftFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityRftBuildingClicked = false;widClicked=true"></rc-btn> -->
-
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="QualityRftBuildingClicked = false;widClicked=true">Close</button>
@@ -5289,7 +5196,8 @@
 
                 <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
 
-                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']"></tr>
+                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']">
+                </tr>
 
 
                 <tr mat-header-row *matHeaderRowDef="QualityRftBuildingColumns"></tr>
@@ -5304,13 +5212,10 @@
 
     </div>
 
-    <div *ngIf="QualityRftFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="QualityRftFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!QualityRftLineClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityRftFloorClicked = false;widClicked=true"></rc-btn>
-         -->
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="QualityRftFloorClicked = false;widClicked=true">Close</button>
 
@@ -5393,7 +5298,8 @@
 
                 <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
 
-                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']"></tr>
+                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']">
+                </tr>
 
                 <tr mat-header-row *matHeaderRowDef="QualityRftFloorColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: QualityRftFloorColumns;let k = index"
@@ -5405,13 +5311,9 @@
 
     </div>
 
-    <div *ngIf="QualityRftLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="QualityRftLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityRftLineClicked = false;widClicked=true"></rc-btn> -->
-
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="QualityRftLineClicked = false;widClicked=true">Close</button>
@@ -5495,7 +5397,8 @@
 
                 <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
 
-                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']"></tr>
+                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']">
+                </tr>
 
 
                 <tr mat-header-row *matHeaderRowDef="QualityRftLineColumns"></tr>
@@ -5512,12 +5415,9 @@
 
 <div *ngIf="FabricCostClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FabricCostClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FabricCostClicked = false;widClicked=true">Close</button>
@@ -5613,7 +5513,8 @@
                 <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
 
 
-                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']"></tr>
+                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']">
+                </tr>
 
                 <tr mat-header-row *matHeaderRowDef="FabricCostColumns;sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: FabricCostColumns;"
@@ -5634,13 +5535,10 @@
 
 <div *ngIf="HrAtrBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrAtrFloorClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrAtrBuildingClicked = false;widClicked=true"></rc-btn>
-         -->
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrAtrBuildingClicked = false;widClicked=true">Close</button>
 
@@ -5697,12 +5595,9 @@
 
     </div>
 
-    <div *ngIf="HrAtrFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrAtrFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrAtrLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrAtrFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrAtrFloorClicked = false;widClicked=true">Close</button>
@@ -5758,13 +5653,9 @@
 
     </div>
 
-    <div *ngIf="HrAtrLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrAtrLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small" (activate)="HrAtrLineClicked = false;widClicked=true">
-      </rc-btn> -->
-
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrAtrLineClicked = false;widClicked=true">Close</button>
@@ -5824,12 +5715,9 @@
 
 <div *ngIf="HrAbsentBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrAbsentFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrAbsentBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrAbsentBuildingClicked = false;widClicked=true">Close</button>
@@ -5912,12 +5800,10 @@
 
     </div>
 
-    <div *ngIf="HrAbsentFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrAbsentFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrAbsentLineClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrAbsentFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrAbsentFloorClicked = false;widClicked=true">Close</button>
@@ -5995,12 +5881,9 @@
 
     </div>
 
-    <div *ngIf="HrAbsentLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrAbsentLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrAbsentLineClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrAbsentLineClicked = false;widClicked=true">Close</button>
@@ -6083,12 +5966,10 @@
 
 <div *ngIf="HrUnplannedBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrUnplannedFloorClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrUnplannedBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrUnplannedBuildingClicked = false;widClicked=true">Close</button>
@@ -6216,12 +6097,9 @@
 
     </div>
 
-    <div *ngIf="HrUnplannedFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrUnplannedFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrUnplannedLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrUnplannedFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrUnplannedFloorClicked = false;widClicked=true">Close</button>
@@ -6345,12 +6223,9 @@
 
     </div>
 
-    <div *ngIf="HrUnplannedLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrUnplannedLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrUnplannedLineClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrUnplannedLineClicked = false;widClicked=true">Close</button>
@@ -6478,12 +6353,9 @@
 
 <div *ngIf="HrMmrBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrMmrFloorClicked" class="gap-2">
-            <!--
-      <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrMmrBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrMmrBuildingClicked = false;widClicked=true">Close</button>
@@ -6546,12 +6418,10 @@
 
     </div>
 
-    <div *ngIf="HrMmrFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrMmrFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrMmrLineClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrMmrFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrMmrFloorClicked = false;widClicked=true">Close</button>
@@ -6612,13 +6482,9 @@
 
     </div>
 
-    <div *ngIf="HrMmrLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrMmrLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small" (activate)="HrMmrLineClicked = false;widClicked=true">
-      </rc-btn> -->
-
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrMmrLineClicked = false;widClicked=true">Close</button>
@@ -6683,12 +6549,9 @@
 
 <div *ngIf="HrBudgetBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrBudgetFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrBudgetBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrBudgetBuildingClicked = false;widClicked=true">Close</button>
@@ -6751,12 +6614,9 @@
 
     </div>
 
-    <div *ngIf="HrBudgetFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrBudgetFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrBudgetLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrBudgetFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrBudgetFloorClicked = false;widClicked=true">Close</button>
@@ -6818,12 +6678,10 @@
 
     </div>
 
-    <div *ngIf="HrBudgetLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrBudgetLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrBudgetLineClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrBudgetLineClicked = false;widClicked=true">Close</button>
@@ -6889,12 +6747,9 @@
 
 <div *ngIf="HrBudgetCostBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrBudgetCostFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrBudgetCostBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrBudgetCostBuildingClicked = false;widClicked=true">Close</button>
@@ -6957,12 +6812,9 @@
 
     </div>
 
-    <div *ngIf="HrBudgetCostFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrBudgetCostFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!HrBudgetCostLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrBudgetCostFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrBudgetCostFloorClicked = false;widClicked=true">Close</button>
@@ -7023,12 +6875,9 @@
 
     </div>
 
-    <div *ngIf="HrBudgetCostLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="HrBudgetCostLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="HrBudgetCostLineClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="HrBudgetCostLineClicked = false;widClicked=true">Close</button>
@@ -7102,12 +6951,10 @@
 
 <div *ngIf="FinishingWipBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!FinishingWipFloorClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FinishingWipBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FinishingWipBuildingClicked = false;widClicked=true">Close</button>
@@ -7167,12 +7014,9 @@
 
     </div>
 
-    <div *ngIf="FinishingWipFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="FinishingWipFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!FinishingWipLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FinishingWipFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FinishingWipFloorClicked = false;widClicked=true">Close</button>
@@ -7232,12 +7076,9 @@
 
     </div>
 
-    <div *ngIf="FinishingWipLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="FinishingWipLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!FinishingWipLotClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FinishingWipLineClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FinishingWipLineClicked = false;widClicked=true">Close</button>
@@ -7296,12 +7137,10 @@
 
     </div>
 
-    <div *ngIf="FinishingWipLotClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="FinishingWipLotClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FinishingWipLotClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FinishingWipLotClicked = false;widClicked=true">Close</button>
@@ -7370,100 +7209,6 @@
 
 </div>
 
-<!-- <div *ngIf="FinishingWipClicked" [@DataList]>
-
-<div class="p-4" fxLayoutGap="8px" fxLayout="column">
-
-  <div class="gap-2">
-
-    <rc-btn label="Close" icon="close" type="warn" size="small"
-      (activate)="FinishingWipClicked = false;widClicked=true"></rc-btn>
-
-  </div>
-
-  <div style="overflow-x: scroll;" >
-
-    <table class="data_table" fxFlex mat-table [dataSource]="FinishingWipDataSource" matSort>
-
-      <ng-container matColumnDef="s_no">
-        <th mat-header-cell *matHeaderCellDef style="width: 60px;"> No. </th>
-        <td mat-cell *matCellDef="let i = index;"> {{ (i+1) }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="jro" >
-        <th mat-header-cell *matHeaderCellDef style="width: 120px;"> JRO  </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.jro }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="style">
-        <th mat-header-cell *matHeaderCellDef style="width: 120px;"> Style  </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.style }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="lot">
-        <th mat-header-cell *matHeaderCellDef style="width: 120px;"> Lot  </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.lot }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="line">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Line </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.line }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="cutting_load_qty">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Cutting Loaded</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.cutting_load_qty }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="packing_fg_qty">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Packing FG </th>
-        <td mat-cell *matCellDef="let row;"> {{ row.packing_fg_qty }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="in_line_wip">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Inline WIP</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.in_line_wip }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="isshed_to_wh">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Issue To WH</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.isshed_to_wh }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="finishing_wip">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;">Finishing WIP</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.finishing_wip }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="total_wip">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;">Total WIP</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.total_wip }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="total_rejection">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;">Total Rejection</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.total_rejection }} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="header-row-first-group">
-        <th mat-header-cell *matHeaderCellDef class="table_title" style="text-align: center;" [attr.colspan]="12">
-          Finishing WIP For {{ this.FilterData.to_date  }}  </th>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
-
-      <tr mat-header-row *matHeaderRowDef="FinishingWipColumns;sticky: true"></tr>
-      <tr mat-row *matRowDef="let row; columns: FinishingWipColumns;"></tr>
-    </table>
-
-  </div>
-
-</div>
-
-
-</div> -->
-
-
 
 <!--  Finising kpt data -->
 <!--  Finising kpt data -->
@@ -7476,12 +7221,10 @@
 
 <div *ngIf="TrimsDownTimeDatewiseClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!TrimsDownTimeClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="TrimsDownTimeDatewiseClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="TrimsDownTimeDatewiseClicked = false;widClicked=true">Close</button>
@@ -7561,12 +7304,9 @@
 
     </div>
 
-    <div *ngIf="TrimsDownTimeClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="TrimsDownTimeClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="TrimsDownTimeClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="TrimsDownTimeClicked = false;widClicked=true">Close</button>
@@ -7665,12 +7405,9 @@
 
 <div *ngIf="MntDownTimeDatewiseClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!MntDownTimeClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="MntDownTimeDatewiseClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="MntDownTimeDatewiseClicked = false;widClicked=true">Close</button>
@@ -7750,12 +7487,9 @@
 
     </div>
 
-    <div *ngIf="MntDownTimeClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="MntDownTimeClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="MntDownTimeClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="MntDownTimeClicked = false;widClicked=true">Close</button>
@@ -7851,12 +7585,9 @@
 
 <div *ngIf="IndEngCpmBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!IndEngCpmFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="IndEngCpmBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="IndEngCpmBuildingClicked = false;widClicked=true">Close</button>
@@ -7969,12 +7700,9 @@
 
     </div>
 
-    <div *ngIf="IndEngCpmFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="IndEngCpmFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!IndEngCpmLineClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="IndEngCpmFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="IndEngCpmFloorClicked = false;widClicked=true">Close</button>
@@ -8089,12 +7817,9 @@
 
     </div>
 
-    <div *ngIf="IndEngCpmLineClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="IndEngCpmLineClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="IndEngCpmLineClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="IndEngCpmLineClicked = false;widClicked=true">Close</button>
@@ -8223,12 +7948,9 @@
 
 <div *ngIf="ManagementKPIClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="ManagementKPIClicked = false;widClicked=false"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="ManagementKPIClicked = false;widClicked=false">Close</button>
@@ -8256,7 +7978,8 @@
 
                 <ng-container matColumnDef="today_inhouse_stitch">
                     <th mat-header-cell *matHeaderCellDef>TODAY</th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_inhouse_stitch }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_inhouse_stitch }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="tilldate_inhouse_stitch">
@@ -8267,23 +7990,27 @@
 
                 <ng-container matColumnDef="today_outhouse_stitch">
                     <th mat-header-cell *matHeaderCellDef> TODAY </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_outhouse_stitch }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_outhouse_stitch }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="tilldate_outhouse_stitch">
                     <th mat-header-cell *matHeaderCellDef> TILLDATE </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_outhouse_stitch }}
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_outhouse_stitch
+                        }}
                     </td>
                 </ng-container>
 
                 <ng-container matColumnDef="today_total_stitch">
                     <th mat-header-cell *matHeaderCellDef> TODAY </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_total_stitch }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_total_stitch }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="tilldate_total_stitch">
                     <th mat-header-cell *matHeaderCellDef> TILLDATE </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_total_stitch }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_total_stitch }}
+                    </td>
                 </ng-container>
 
 
@@ -8294,22 +8021,26 @@
 
                 <ng-container matColumnDef="tilldate_piece_rate">
                     <th mat-header-cell *matHeaderCellDef> TILLDATE </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_piece_rate }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_piece_rate }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="today_inhouse_pack">
                     <th mat-header-cell *matHeaderCellDef> TODAY </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_inhouse_pack }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_inhouse_pack }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="tilldate_inhouse_pack">
                     <th mat-header-cell *matHeaderCellDef> TILLDATE </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_inhouse_pack }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_inhouse_pack }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="today_outhouse_pack">
                     <th mat-header-cell *matHeaderCellDef> TODAY </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_outhouse_pack }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.today_outhouse_pack }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="tilldate_outhouse_pack">
@@ -8325,7 +8056,8 @@
 
                 <ng-container matColumnDef="tilldate_total_pack">
                     <th mat-header-cell *matHeaderCellDef> TILLDATE </th>
-                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_total_pack }} </td>
+                    <td mat-cell *matCellDef="let row;" style="min-width: 130px;"> {{ row.tilldate_total_pack }}
+                    </td>
                 </ng-container>
 
                 <ng-container matColumnDef="ftd_pcs">
@@ -8400,12 +8132,12 @@
 
 
                 <!-- <ng-container matColumnDef="sub-group-7">
-        <th mat-header-cell *matHeaderCellDef class="table_sub_title" style="text-align: center;" [attr.colspan]="2">INHOUSE PACKING</th>
-      </ng-container>
+    <th mat-header-cell *matHeaderCellDef class="table_sub_title" style="text-align: center;" [attr.colspan]="2">INHOUSE PACKING</th>
+  </ng-container>
 
-      <ng-container matColumnDef="sub-group-8">
-        <th mat-header-cell *matHeaderCellDef class="table_sub_title" style="text-align: center;" [attr.colspan]="2">OUTHOUSE PACKING</th>
-      </ng-container> -->
+  <ng-container matColumnDef="sub-group-8">
+    <th mat-header-cell *matHeaderCellDef class="table_sub_title" style="text-align: center;" [attr.colspan]="2">OUTHOUSE PACKING</th>
+  </ng-container> -->
 
                 <ng-container matColumnDef="sub-group-9">
                     <th mat-header-cell *matHeaderCellDef class="table_sub_title" style="text-align: center;"
@@ -8457,12 +8189,9 @@
 
 <div *ngIf="FinsingCsgBuildingClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!FinsingCsgFloorClicked" class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FinsingCsgBuildingClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FinsingCsgBuildingClicked = false;widClicked=true">Close</button>
@@ -8579,12 +8308,10 @@
 
     </div>
 
-    <div *ngIf="FinsingCsgFloorClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="FinsingCsgFloorClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="FinsingCsgFloorClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="FinsingCsgFloorClicked = false;widClicked=true">Close</button>
@@ -8720,12 +8447,9 @@
 
 <div *ngIf="DespatchWipClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="DespatchWipClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="DespatchWipClicked = false;widClicked=true">Close</button>
@@ -8757,9 +8481,9 @@
                 </ng-container>
 
                 <!-- <ng-container matColumnDef="dispatch_wip">
-        <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Dispatch WIP</th>
-        <td mat-cell *matCellDef="let row;"> {{ row.dispatch_wip }} </td>
-      </ng-container> -->
+    <th mat-header-cell *matHeaderCellDef style="width: 80px;"> Dispatch WIP</th>
+    <td mat-cell *matCellDef="let row;"> {{ row.dispatch_wip }} </td>
+  </ng-container> -->
 
                 <ng-container matColumnDef="balance">
                     <th mat-header-cell *matHeaderCellDef style="width: 80px;"> WH Stock</th>
@@ -8791,12 +8515,9 @@
 
 <div *ngIf="QualityCostDatewiseClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="QualityCostDatewiseClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="QualityCostDatewiseClicked = false;widClicked=true">Close</button>
@@ -8882,7 +8603,8 @@
                 <tr mat-header-row *matHeaderRowDef="['header-row-first-group'];sticky: true"></tr>
 
 
-                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']"></tr>
+                <tr mat-header-row *matHeaderRowDef="['sub-group-1','sub-group-2','sub-group-3','sub-group-4']">
+                </tr>
 
                 <tr mat-header-row *matHeaderRowDef="QualityCostDatewiseColumns;sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: QualityCostDatewiseColumns;"
@@ -8899,12 +8621,10 @@
 
 <div *ngIf="TrimsUnusedGroupClicked" [@DataList]>
 
-    <div class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div *ngIf="!TrimsUnusedItemClicked" class="gap-2">
 
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="TrimsUnusedGroupClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="TrimsUnusedGroupClicked = false;widClicked=true">Close</button>
@@ -8958,12 +8678,9 @@
 
     </div>
 
-    <div *ngIf="TrimsUnusedItemClicked" class="p-4" fxLayoutGap="8px" fxLayout="column">
+    <div *ngIf="TrimsUnusedItemClicked" class="row p-4" fxLayoutGap="8px" fxLayout="column">
 
         <div class="gap-2">
-
-            <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
-        (activate)="TrimsUnusedItemClicked = false;widClicked=true"></rc-btn> -->
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
                 (click)="TrimsUnusedItemClicked = false;widClicked=true">Close</button>
@@ -9012,8 +8729,3 @@
         </div>
 
     </div>
-
-
-
-
-</div>
