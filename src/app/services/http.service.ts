@@ -7,6 +7,7 @@ import {
   HttpEventType,
   HttpEvent
 } from '@angular/common/http';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
 @Injectable({
@@ -14,7 +15,8 @@ import {
 })
 export class HttpService {
 
-  constructor( private httpClient: HttpClient) { }
+  constructor( private httpClient: HttpClient,
+    private router: Router) { }
 
   postData(
     post_url: String,
@@ -51,8 +53,18 @@ export class HttpService {
               alert(e.body.msg);
             }
 
-            observer.next(e.body);
-            observer.complete();
+            if(e.body.is_logged)
+            {
+                observer.next(e.body);
+                observer.complete();
+            }
+            else if(e.body.result == '')
+            {
+                localStorage.clear();
+                this.router.navigate(['/authentication/logout']);
+                observer.complete();
+            }
+
         }
       });
     })
