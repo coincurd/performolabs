@@ -48,6 +48,7 @@ export class HttpService {
         if(e.body)
         {
             console.log(e.body);
+
             if (e.body.toast == 'true' && e.body.msg !== '')
             {
               alert(e.body.msg);
