@@ -210,6 +210,10 @@ import { AddProjectConfigComponent } from  './zeel_forms/config/add/add.componen
 import { ListProjectConfigComponent } from  './zeel_forms/config/list/list.component';
 import { ProjectConfigComponent } from  './zeel_forms/config/config.component';
 
+
+import { AddProductionConfigComponent } from  './zeel_forms/production_config/add/add.component';
+import { ProdcutionConfigComponent } from  './zeel_forms/production_config/production_config.component';
+
 // for zeel
 // for zeel
 
@@ -264,6 +268,14 @@ export const routes: Routes = [
         children: [
             {path: 'list', component: ListProjectConfigComponent},
             {path: '', component: AddProjectConfigComponent},
+        ]
+    },
+    {
+        path: 'production_config',
+        component: ProdcutionConfigComponent,
+        canActivate : [ AuthGuard ],
+        children: [
+            {path: '', component: AddProductionConfigComponent},
         ]
     },
     // for zeel
