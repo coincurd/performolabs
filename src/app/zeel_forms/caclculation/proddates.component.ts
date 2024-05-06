@@ -21,8 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { NgFor, DatePipe } from '@angular/common';
-import * as moment from 'moment';
-import 'moment/locale/pt-br';
+
 @Component({
     selector: 'app-proddates-list',
     standalone: true,
