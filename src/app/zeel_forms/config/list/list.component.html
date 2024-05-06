@@ -1,0 +1,47 @@
+
+<div>
+    <button mat-flat-button matStepperNext class="daxa" style="float: right;margin-bottom: 8px;" routerLink="/project_config">+ Config</button>
+</div>
+
+<div class="users-table">
+    <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> S.No </th>
+                <td mat-cell *matCellDef="let i = index;"> {{ (paginator.pageIndex * paginator.pageSize) + (i+1)
+                    }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="company">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 50px"> Company </th>
+                <td mat-cell *matCellDef="let row"> {{row.company }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="total_req_pow">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> Total Man Power Req </th>
+                <td mat-cell *matCellDef="let row"> {{row.req_man_power }} </td>
+            </ng-container>
+
+            <!-- Edit Column -->
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef style="min-width: 30px"> Config </th>
+                <td mat-cell *matCellDef="let row">
+
+                    <button mat-button [routerLink]="[ '/project_config' ]"
+                        [queryParams]="{ id: row.id }">
+                        Config
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+
+        </table>
+
+    </div>
+    <mat-paginator [pageSizeOptions]="[15,30,50,100,200]"></mat-paginator>
+</div>

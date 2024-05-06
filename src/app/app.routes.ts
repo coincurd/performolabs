@@ -206,6 +206,10 @@ import { UsersInputComponent } from  './zeel_forms/users/users.component';
 import { AuthGuard } from './auth.guard';
 
 
+import { AddProjectConfigComponent } from  './zeel_forms/config/add/add.component';
+import { ListProjectConfigComponent } from  './zeel_forms/config/list/list.component';
+import { ProjectConfigComponent } from  './zeel_forms/config/config.component';
+
 // for zeel
 // for zeel
 
@@ -253,8 +257,15 @@ export const routes: Routes = [
             {path: 'logout', component: LogoutComponent}
         ]
     },
-
-
+    {
+        path: 'project_config',
+        component: ProjectConfigComponent,
+        canActivate : [ AuthGuard ],
+        children: [
+            {path: 'list', component: ListProjectConfigComponent},
+            {path: '', component: AddProjectConfigComponent},
+        ]
+    },
     // for zeel
     // for zeel
 

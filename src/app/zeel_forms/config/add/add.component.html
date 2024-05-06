@@ -1,0 +1,111 @@
+<div class="row">
+    <div class="col-xxl-12 col-xxxl-12">
+        <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block">
+            <mat-card-header>
+                <mat-card-title>
+                    <h5 class="mt-0 mb-0">
+                      Update Config
+                    </h5>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form name="ConfigForm" id="ConfigForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Company
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>Company</mat-label>
+                                    <mat-select id="username" name="username" [(ngModel)]="ConfigFormData.cmp_id">
+                                        <mat-option *ngFor="let c of companies" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Required Man Power
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Required Man Power
+                                    </mat-label>
+                                    <input matInput id="req_man_power" name="req_man_power" type="number"
+                                        [(ngModel)]="ConfigFormData.req_man_power">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Std Shift Minutes
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Std Shift Minutes
+                                    </mat-label>
+                                    <input matInput id="std_shift_min" name="std_shift_min" type="number"
+                                        [(ngModel)]="ConfigFormData.std_shift_min">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Cutting Target Eff %
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Cutting Target Eff %
+                                    </mat-label>
+                                    <input matInput id="cutting_target_eff" name="cutting_target_eff" type="number"
+                                        [(ngModel)]="ConfigFormData.cutting_target_eff">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Finishing Target Eff %
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Finishing Target Eff %
+                                    </mat-label>
+                                    <input matInput id="finishing_target_eff" name="finishing_target_eff" type="number"
+                                        [(ngModel)]="ConfigFormData.finishing_target_eff">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    CTN Packing Target Eff %
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        CTN Packing Target Eff %
+                                    </mat-label>
+                                    <input matInput id="ctn_packing_target_eff" name="ctn_packing_target_eff" type="number"
+                                        [(ngModel)]="ConfigFormData.ctn_packing_target_eff">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+                <div class="btn-box">
+                    <button (click)="save()" mat-button>
+                        Update
+                    </button>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
