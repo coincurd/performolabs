@@ -49,13 +49,17 @@ export class AddProductionConfigComponent {
         this._unsubscribeAll = new Subject();
 
 
-        this.HttpService.postData('masters/DesignationSB', {}).subscribe((response: any) => {
-            this.designationSB = response.result;
+        this.HttpService.postData('masters/DeptSB', {}).subscribe((response: any) => {
+            this.deptSB = response.result;
 
-            this.HttpService.postData('masters/getMainConfig', {}).subscribe((response: any) => {
-                this.productionConfigData = response.result;
+            this.HttpService.postData('masters/DesignationSB', {}).subscribe((response: any) => {
+                this.designationSB = response.result;
+
+                this.HttpService.postData('masters/getMainConfig', {}).subscribe((response: any) => {
+                    this.productionConfigData = response.result;
+                });
+
             });
-
         });
 
     }
