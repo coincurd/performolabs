@@ -20,11 +20,13 @@ import { MatDatepickerModule , } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { NgFor } from '@angular/common';
-
+import { NgFor, DatePipe } from '@angular/common';
+import * as moment from 'moment';
+import 'moment/locale/pt-br';
 @Component({
     selector: 'app-proddates-list',
     standalone: true,
+    providers : [ DatePipe ],
     imports: [MatCardModule, FormsModule, NgFor,MatDatepickerModule, MatNativeDateModule,MatFormFieldModule,MatInputModule, MatSelectModule,MatMenuModule, MatButtonModule, RouterLink, MatTableModule, MatPaginatorModule, NgIf, MatCheckboxModule, MatTooltipModule],
     templateUrl: './proddates.component.html',
     styleUrl: './proddates.component.scss'
@@ -35,8 +37,8 @@ export class datesListComponent {
 
     filterFormData: any = {
         cmp_id : '1',
-        from_date : '2024-05-01',
-        to_date : '2024-05-31',
+        from_date : '',
+        to_date : '',
       };
 
     companies: any = [];
@@ -60,8 +62,13 @@ export class datesListComponent {
     @ViewChild(MatSort, { static: true }) sort: MatSort;
 
 
-    constructor( private HttpService : HttpService) {
+    constructor( private HttpService : HttpService,
+        private DatePipe  : DatePipe) {
         this._unsubscribeAll = new Subject();
+
+        this.HttpService.postData('masters/CompanySB', {}).subscribe((response: any) => {
+            this.companies = response.result;
+        });
 
       this.getInformation(this.filterFormData, false, false);
 
@@ -73,13 +80,13 @@ export class datesListComponent {
 
     getInformation(d : any, e: any = false, sorting: any = false, search: any = ''): PageEvent {
 
-        // if (!this.getProcessing) {
-        //   this.getProcessing = true;
+        let from_date = this.DatePipe.transform(d.from_date, 'yyyy-MM-dd');
+        let to_date = this.DatePipe.transform(d.to_date, 'yyyy-MM-dd');
 
         d.pageIndex = e.pageIndex !== undefined ? e.pageIndex : this.paginatorData.itemPageIndex;
         d.pageSize = e.pageSize !== undefined ? e.pageSize : this.paginatorData.itemPageSize;
-        d.from_date = d.from_date !== undefined ? d.from_date : '';
-        d.to_date = d.to_date !== undefined ? d.to_date : '';
+        d.from_date = from_date !== undefined ? from_date : '';
+        d.to_date = to_date !== undefined ? to_date : '';
         d.cmp_id = d.cmp_id !== undefined ? d.cmp_id : '';
         d.sorting_col = sorting.active && sorting !== false ? sorting.active : this.paginatorData.sortingActive;
         d.sorting_type = sorting.direction && sorting !== false ? sorting.direction : this.paginatorData.sortingDirection;

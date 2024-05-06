@@ -214,6 +214,9 @@ import { ProjectConfigComponent } from  './zeel_forms/config/config.component';
 import { AddProductionConfigComponent } from  './zeel_forms/production_config/add/add.component';
 import { ProdcutionConfigComponent } from  './zeel_forms/production_config/production_config.component';
 
+import { AddCsConfigComponent } from  './zeel_forms/cost_center_config/add/add.component';
+import { CsConfigComponent } from  './zeel_forms/cost_center_config/cost_center_config.component';
+
 // for zeel
 // for zeel
 
@@ -276,6 +279,14 @@ export const routes: Routes = [
         canActivate : [ AuthGuard ],
         children: [
             {path: '', component: AddProductionConfigComponent},
+        ]
+    },
+    {
+        path: 'cs_config',
+        component: CsConfigComponent,
+        canActivate : [ AuthGuard ],
+        children: [
+            {path: '', component: AddCsConfigComponent},
         ]
     },
     // for zeel

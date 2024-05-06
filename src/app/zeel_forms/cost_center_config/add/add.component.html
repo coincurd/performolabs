@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-xxl-12 col-xxxl-12">
+        <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block">
+            <mat-card-header>
+            </mat-card-header>
+            <mat-card-content>
+                <form name="ConfigForm" id="ConfigForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="mb-25">
+                                <label class="main-label d-block lh-1 text-black">
+                                    Company
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>Company</mat-label>
+                                    <mat-select id="cmp_id" name="cmp_id" [(ngModel)]="csConfigData.cmp_id"
+                                        (selectionChange)="getData()">
+                                        <mat-option *ngFor="let c of CompanySB" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <form name="costForm" id="costForm" autocomplete="off">
+                    <div *ngFor="let cs of csConfigData.cost_center_list; let i = index; trackBy: trackByFn;"
+                        [ngModelGroup]="i + ''" #deptForm="ngModelGroup" class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label *ngIf="i===0" class="main-label d-block lh-1 text-black">
+                                    Cost Center
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>
+                                        Cost Center
+                                    </mat-label>
+                                    <input matInput id="name" name="name" disabled [(ngModel)]="cs.name">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-25">
+                                <label *ngIf="i===0" class="main-label d-block lh-1 text-black">
+                                    Type
+                                </label>
+                                <mat-form-field>
+                                    <mat-label>Type</mat-label>
+                                    <mat-select id="type" name="type" [(ngModel)]="cs.type">
+                                        <mat-option value="building">Building</mat-option>
+                                        <mat-option value="floor">Floor</mat-option>
+                                        <mat-option value="line">Line</mat-option>
+                                        <mat-option value="department">Department</mat-option>
+                                        <mat-option value="general">General</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+                <div class="btn-box">
+                    <button (click)="save()" mat-button>
+                        Update
+                    </button>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
