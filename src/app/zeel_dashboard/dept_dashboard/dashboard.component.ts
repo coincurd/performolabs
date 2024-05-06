@@ -17,11 +17,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatNativeDateModule } from '@angular/material/core';
-import { NgFor } from '@angular/common';
+import { NgFor, DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-dashboard',
     standalone: true,
+    providers : [ DatePipe ],
     imports: [RouterLink, NgIf, MatNativeDateModule, NgFor, MatCardModule, MatInputModule, MatSelectModule, MatFormFieldModule, MatDatepickerModule, NgClass, MatTableModule, HttpClientModule, MatButtonModule, FormsModule],
     templateUrl: './dashboard.component.html',
     styleUrl: './dashboard.component.scss',
@@ -415,7 +416,7 @@ export class ZeelDashboardComponent {
      * Constructor
      *
      */
-    constructor(private HttpService: HttpService) {
+    constructor(private HttpService: HttpService,  private DatePipe  : DatePipe) {
 
         console.log(environment);
 
@@ -468,6 +469,10 @@ export class ZeelDashboardComponent {
         this.unitClicked = false;
         this.FloorClicked = false;
         this.widClicked = false;
+
+        this.FilterData.from_date = this.DatePipe.transform(this.FilterData.from_date, 'yyyy-MM-dd');
+        this.FilterData.to_date = this.DatePipe.transform(this.FilterData.to_date, 'yyyy-MM-dd');
+
     }
 
     getDataFloorWise(dept: any) {
@@ -1672,7 +1677,6 @@ export class ZeelDashboardComponent {
             });
         }
     }
-
     warehouse_inward: number = 0;
     dispatch_qty: number = 0;
     dispatch_wip: number = 0;

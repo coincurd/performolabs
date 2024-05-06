@@ -46,7 +46,7 @@ export class AddSamComponent {
           if (params.has('style_id') && params.has('cmp_id')) {
             this.SAMInputFormData.style_id = params.get('style_id');
             this.SAMInputFormData.cmp_id = params.get('cmp_id');
-            this.HttpService.getData('masters/getSAMInput/' + params.get('cmp_id') + '/' + params.get('style_id')).subscribe((response : any) => {
+            this.HttpService.postData('masters/getSAMInput/' + params.get('cmp_id') + '/' + params.get('style_id'),{}).subscribe((response : any) => {
               this.SAMInputFormData = response.result;
             });
 
