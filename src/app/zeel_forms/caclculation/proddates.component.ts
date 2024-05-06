@@ -12,27 +12,36 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { PageEvent } from '@angular/material/paginator';
 import { HttpService } from '../../services/http.service';
+import { MatNativeDateModule } from '@angular/material/core';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule , } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { NgFor } from '@angular/common';
 
 @Component({
-    selector: 'app-users-list',
+    selector: 'app-proddates-list',
     standalone: true,
-    imports: [MatCardModule, MatMenuModule, MatButtonModule, RouterLink, MatTableModule, MatPaginatorModule, NgIf, MatCheckboxModule, MatTooltipModule],
-    templateUrl: './users-list.component.html',
-    styleUrl: './users-list.component.scss'
+    imports: [MatCardModule, FormsModule, NgFor,MatDatepickerModule, MatNativeDateModule,MatFormFieldModule,MatInputModule, MatSelectModule,MatMenuModule, MatButtonModule, RouterLink, MatTableModule, MatPaginatorModule, NgIf, MatCheckboxModule, MatTooltipModule],
+    templateUrl: './proddates.component.html',
+    styleUrl: './proddates.component.scss'
 })
 export class datesListComponent {
 
     private _unsubscribeAll: Subject<any>;
 
     filterFormData: any = {
-        cmp_id : '2',
-        from_date: '' ,
-        to_date: '',
+        cmp_id : '1',
+        from_date : '2024-05-01',
+        to_date : '2024-05-31',
       };
 
-      BtnTriggered : boolean = false;
+    companies: any = [];
+
+    BtnTriggered : boolean = false;
 
     paginatorData: any = {
     itemPageIndex: 0,
@@ -55,7 +64,6 @@ export class datesListComponent {
         this._unsubscribeAll = new Subject();
 
       this.getInformation(this.filterFormData, false, false);
-
 
       this.displayedColumns = ['company_name', 'prod_date', 'cacl1','cacl2', 'calculated'];
 
@@ -83,7 +91,7 @@ export class datesListComponent {
           this.paginatorData.itemPageSize = response.result.pageSize;
           this.paginatorData.itemPageLength = response.result.length;
 
-          console.log(this.paginatorData);
+          console.log(this.data);
         });
         return e;
       }

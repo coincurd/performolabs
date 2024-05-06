@@ -194,7 +194,7 @@ import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 import { LogoutComponent } from './authentication/logout/logout.component';
 
 import { ZeelDashboardComponent } from './zeel_dashboard/dept_dashboard/dashboard.component';
-import { datesListComponent } from './zeel_forms/caclculation/users-list.component';
+import { datesListComponent } from './zeel_forms/caclculation/proddates.component';
 
 import { AddSamComponent } from  './zeel_forms/sam_input/add/add.component';
 import { ListSamComponent } from  './zeel_forms/sam_input/list/list.component';
