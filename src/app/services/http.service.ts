@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject,ReplaySubject,BehaviorSubject,Observable,Subscribable,Subscription} from 'rxjs';
 import { environment } from '../environments/environment';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {
   HttpClient,
   HttpHeaders,
@@ -15,7 +16,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class HttpService {
 
-  constructor( private httpClient: HttpClient,
+  constructor( private httpClient: HttpClient,private _snackBar: MatSnackBar,
     private router: Router) { }
 
   postData(
@@ -47,19 +48,15 @@ export class HttpService {
       this.httpClient.post<any>(postingUrl , d, postHeader).subscribe(e => {
         if(e.body)
         {
-            console.log(e.body);
+
+            observer.next(e.body);
+            observer.complete();
 
             if (e.body.toast == 'true' && e.body.msg !== '')
             {
-              alert(e.body.msg);
+              this.openSnackBar(e.body.msg,'ok');
             }
-
-            if(e.body.is_logged)
-            {
-                observer.next(e.body);
-                observer.complete();
-            }
-            else if(e.body.result == '')
+            else if(e.body.result === '' && !e.body.result.is_logged)
             {
                 localStorage.clear();
                 this.router.navigate(['/authentication/logout']);
@@ -71,8 +68,15 @@ export class HttpService {
     })
   }
 
-  getData(
+  durationInSeconds : number = 2;
 
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+        duration: this.durationInSeconds * 1000,
+      });
+  }
+
+  getData(
 
     get_url: String,
 

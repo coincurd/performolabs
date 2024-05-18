@@ -116,8 +116,11 @@ export class HeaderComponent {
   DoLogout()
   {
     this.HttpService.postData('auth/sign_out',{}).subscribe((response : any) => {
-      localStorage.clear();
-      this.router.navigate(['/authentication/logout']);
+        if(!response.is_logged)
+            {
+                this.router.navigate(['/authentication/logout']);
+                localStorage.clear();
+            }
     });
   }
 

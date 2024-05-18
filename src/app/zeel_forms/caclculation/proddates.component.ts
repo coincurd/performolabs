@@ -36,8 +36,8 @@ export class datesListComponent {
 
     filterFormData: any = {
         cmp_id : '1',
-        from_date : '',
-        to_date : '',
+        to_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+        from_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
       };
 
     companies: any = [];

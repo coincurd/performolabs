@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { CustomizerSettingsService } from '../../customizer-settings/customizer-settings.service';
-import { AuthService} from '../../auth.service';
+import { AuthService } from '../../auth.service';
 import { HttpService } from '../../services/http.service';
 
 @Component({
@@ -45,36 +45,35 @@ export class SignInComponent {
     hide = true;
 
     ngOnInit() {
-        if(this.AuthService.LogAuthenticate()){
-          this.router.navigate(['/zeel_dashboard']);
+        if (this.AuthService.LogAuthenticate()) {
+            this.router.navigate(['/zeel_dashboard']);
         }
     }
 
     // Form
     authForm: FormGroup;
     onSubmit() {
-        this.btnClicked=true;
+        this.btnClicked = true;
         if (this.authForm.valid) {
-        this.HttpService.postData('auth/sign_in', this.authForm.value).subscribe((response : any) => {
-            console.log(response);
-            if(response.result)
-            {
-                if(response.result.is_logged)
-                {
-                    localStorage.setItem('is_logged',response.result.is_logged);
-                    localStorage.setItem('session_user',JSON.stringify(response.result.user_info));
-                    this.router.navigate(['/zeel_dashboard']);
+            this.HttpService.postData('auth/sign_in', this.authForm.value).subscribe((response: any) => {
+                console.log(response);
+                if (response.result) {
+                    if (response.result.is_logged) {
+                        localStorage.setItem('is_logged', response.result.is_logged);
+                        localStorage.setItem('session_user', JSON.stringify(response.result.user_info));
+                        this.router.navigate(['/zeel_dashboard']);
+                    }
+                    else {
+                        this.btnClicked = false;
+                    }
                 }
-                else
-                {
-                    this.btnClicked=false;
+                else {
+                    this.btnClicked = false;
                 }
-            }
 
             });
         }
-        else
-        {
+        else {
             console.log('Form is invalid. Please check the fields.');
         }
     }

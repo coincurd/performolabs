@@ -394,9 +394,9 @@ export class ZeelDashboardComponent {
 
     FilterData: any = {
         cmp_id: '2',
-        to_date: '2023-11-07',
-        from_date: '2023-11-07',
-        detail_date: '2023-11-07',
+        to_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+        from_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
+        detail_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
         from: '',
         floor_id: '',
         period: 'for_date'
@@ -417,9 +417,6 @@ export class ZeelDashboardComponent {
      *
      */
     constructor(private HttpService: HttpService,  private DatePipe  : DatePipe) {
-
-        console.log(environment);
-
 
 
         this.getData();
