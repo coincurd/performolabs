@@ -184,14 +184,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'cutting_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="CuttingKpiDetail('cutting_downtime','','','','')">
@@ -204,7 +204,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ today_downtime }}
                             </span>
                         </div>
@@ -212,7 +213,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_downtime }}
                             </span>
                         </div>
@@ -220,7 +222,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ today_cost_loss }}
                             </span>
                         </div>
@@ -228,7 +231,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TOTAL LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_cost_loss }}
                             </span>
                         </div>
@@ -241,7 +245,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="CuttingKpiDetail('re_cuttings','','','','')">
@@ -254,7 +258,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY RECUT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ today_recut }}
                             </span>
                         </div>
@@ -262,7 +267,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE RECUT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ total_recut }}
                             </span>
                         </div>
@@ -270,7 +276,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY RECUT %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ today_recut_perc }}
                             </span>
                         </div>
@@ -278,7 +285,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE RECUT %
                             </span>
-                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-center text-white fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ total_recut_perc }}
                             </span>
                         </div>
@@ -290,7 +298,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="CuttingKpiDetail('cutting_cost','','','','')">
@@ -303,7 +311,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PROD
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ cutting_prod }}
                             </span>
                         </div>
@@ -311,7 +320,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ cutting_exp }}
                             </span>
                         </div>
@@ -319,7 +329,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REVENUE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ cutting_rev }}
                             </span>
                         </div>
@@ -328,7 +339,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 P/L
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ cutting_till_pl }}
                             </span>
                         </div>
@@ -341,7 +353,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
                 (click)="CuttingKpiDetail('fab_utliz1','','','','')">
@@ -354,7 +366,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 COST SAVINGS/EXCESS
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fab_cost_savings }}
                             </span>
                         </div>
@@ -371,14 +384,15 @@
     <div class="row" *ngIf="FilterData.wid_data === 'sewing_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
                 <mat-card-content>
@@ -390,7 +404,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY TARGET
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ today_target }}
                             </span>
                         </div>
@@ -398,7 +413,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY ACTUAL
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ today_eff }}
                             </span>
                         </div>
@@ -406,7 +422,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE TARGET
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ upto_date_target }}
                             </span>
                         </div>
@@ -414,7 +431,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE ACTUAL
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ upto_date_eff }}
                             </span>
                         </div>
@@ -426,7 +444,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="SewingKpiDetail('sewing_cost_buiding','','','')">
@@ -439,7 +457,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PROD
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_prod }}
                             </span>
                         </div>
@@ -447,7 +466,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_expense }}
                             </span>
                         </div>
@@ -455,7 +475,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REVENUE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_revenue }}
                             </span>
                         </div>
@@ -464,7 +485,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 P/L
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_pl }}
                             </span>
                         </div>
@@ -473,7 +495,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE P/L
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_till_pl }}
                             </span>
                         </div>
@@ -484,7 +507,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
@@ -498,7 +521,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_inspected }}
                             </span>
                         </div>
@@ -506,7 +530,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PASSED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_pass }}
                             </span>
                         </div>
@@ -514,7 +539,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DEFECT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_defect }}
                             </span>
                         </div>
@@ -522,7 +548,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DHU %
                             </span>
-                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-center text-white fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_dhu_perc }}
                             </span>
                         </div>
@@ -530,7 +557,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE DHU %
                             </span>
-                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-center text-white fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ till_sew_dhu_perc }}
                             </span>
                         </div>
@@ -542,7 +570,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
@@ -556,7 +584,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_inspected }}
                             </span>
                         </div>
@@ -564,7 +593,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PASSED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_pass }}
                             </span>
                         </div>
@@ -572,7 +602,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REJECTED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_rej }}
                             </span>
                         </div>
@@ -580,7 +611,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REJ %
                             </span>
-                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-center text-white fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sew_rej_perc }}
                             </span>
                         </div>
@@ -588,7 +620,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE REJ %
                             </span>
-                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-center text-white fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ till_rej_perc }}
                             </span>
                         </div>
@@ -599,7 +632,7 @@
             </mat-card>
 
         </div>
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
@@ -613,7 +646,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 CUTTING LOADED
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ cutting_loaded }}
                             </span>
                         </div>
@@ -621,7 +655,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 PACKING FG
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ packing_fg }}
                             </span>
                         </div>
@@ -629,7 +664,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 INLINE WIP
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ inline_wip }}
                             </span>
                         </div>
@@ -647,14 +683,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'quality_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="QualityKpiDetail('quality_downtime','','','')">
@@ -667,7 +703,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_today_downtime }}
                             </span>
                         </div>
@@ -675,7 +712,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_tilldate_downtime }}
                             </span>
                         </div>
@@ -683,7 +721,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_today_cost_loss }}
                             </span>
                         </div>
@@ -691,7 +730,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_tilldate_cost_loss }}
                             </span>
                         </div>
@@ -704,7 +744,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="QualityKpiDetail('quality_cost_datewise','','','')">
@@ -717,7 +757,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ inspected_qty }}
                             </span>
                         </div>
@@ -725,7 +766,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_exp }}
                             </span>
                         </div>
@@ -733,7 +775,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 COST
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ quality_cost }}
                             </span>
                         </div>
@@ -742,7 +785,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE COST
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_quality_cost }}
                             </span>
                         </div>
@@ -754,7 +798,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="QualityKpiDetail('quality_rft_buiding','','','')">
@@ -767,7 +811,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_inspected }}
                             </span>
                         </div>
@@ -775,7 +820,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PASSED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_pass }}
                             </span>
                         </div>
@@ -783,7 +829,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 RFT %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_rft_perc }}
                             </span>
                         </div>
@@ -791,7 +838,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE RFT %
                             </span>
-                            <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-center text-white fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_qc_rft_perc }}
                             </span>
                         </div>
@@ -803,7 +851,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
@@ -817,7 +865,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 INSPECTED
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_inspected }}
                             </span>
                         </div>
@@ -826,7 +875,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 PASSED
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_pass }}
                             </span>
                         </div>
@@ -836,7 +886,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 DEFECT
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_defect }}
                             </span>
                         </div>
@@ -845,7 +896,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 DHU %
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ qc_dhu_perc }}
                             </span>
                         </div>
@@ -854,7 +906,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 Tilldate DHU %
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ till_qc_dhu_perc }}
                             </span>
                         </div>
@@ -875,14 +928,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'hr_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="HrKpiDetail('htatr_building','','','')">
@@ -895,7 +948,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ strength }}
                             </span>
                         </div>
@@ -903,7 +957,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ present }}
                             </span>
                         </div>
@@ -911,7 +966,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE LEFT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_left }}
                             </span>
                         </div>
@@ -920,7 +976,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE ATR %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_atr }}
                             </span>
                         </div>
@@ -933,7 +990,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
@@ -948,7 +1005,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ strength }}
                             </span>
                         </div>
@@ -957,7 +1015,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ present }}
                             </span>
                         </div>
@@ -966,7 +1025,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ABSENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ absent }}
                             </span>
                         </div>
@@ -975,7 +1035,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ABSENT %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ absent_perc }}
                             </span>
                         </div>
@@ -984,7 +1045,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE ABSENT %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_absent_perc }}
                             </span>
                         </div>
@@ -1012,7 +1074,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ strength }}
                             </span>
                         </div>
@@ -1021,7 +1084,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ABSENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ absent }}
                             </span>
                         </div>
@@ -1030,7 +1094,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY PLANNED %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ planned_perc }}
                             </span>
                         </div>
@@ -1039,7 +1104,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE PLANNED %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_planned_perc }}
                             </span>
                         </div>
@@ -1048,7 +1114,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY UNPLANNED %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ un_planned_perc }}
                             </span>
                         </div>
@@ -1057,7 +1124,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE UNPLANNED %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ tilldate_un_planned_perc }}
                             </span>
                         </div>
@@ -1070,7 +1138,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
@@ -1085,7 +1153,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ strength }}
                             </span>
                         </div>
@@ -1094,7 +1163,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 PRESENT
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ present }}
                             </span>
                         </div>
@@ -1103,7 +1173,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 MACHINE
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ operators_present }}
                             </span>
                         </div>
@@ -1112,7 +1183,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 MMR
                             </span>
-                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-black text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ mmr }}
                             </span>
                         </div>
@@ -1125,7 +1197,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
@@ -1140,7 +1212,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ strength }}
                             </span>
                         </div>
@@ -1149,7 +1222,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ present }}
                             </span>
                         </div>
@@ -1158,7 +1232,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 BUDGET
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sanction }}
                             </span>
                         </div>
@@ -1167,7 +1242,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DIFF
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sanction_diff }}
                             </span>
                         </div>
@@ -1181,7 +1257,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
 
@@ -1197,7 +1273,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ strength }}
                             </span>
                         </div>
@@ -1206,7 +1283,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT COST
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ total_cost }}
                             </span>
                         </div>
@@ -1215,7 +1293,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 BUDGET COST
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sanction_cost_budget }}
                             </span>
                         </div>
@@ -1224,7 +1303,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DIFF
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ sanction_cost_diff }}
                             </span>
                         </div>
@@ -1243,14 +1323,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'ind_eng_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
@@ -1263,7 +1343,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY TARGET
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_eng_today_target }}
                             </span>
                         </div>
@@ -1271,7 +1352,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY ACTUAL
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_eng_today_eff }}
                             </span>
                         </div>
@@ -1279,7 +1361,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE TARGET
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_eng_upto_date_target }}
                             </span>
                         </div>
@@ -1288,7 +1371,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE TARGET
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_eng_upto_date_eff }}
                             </span>
                         </div>
@@ -1301,7 +1385,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
@@ -1316,7 +1400,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_strength }}
                             </span>
                         </div>
@@ -1325,7 +1410,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_present }}
                             </span>
                         </div>
@@ -1334,7 +1420,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 MACHINE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_operators_present }}
                             </span>
                         </div>
@@ -1343,7 +1430,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 MMR
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_mmr }}
                             </span>
                         </div>
@@ -1370,7 +1458,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PROD
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_prod_qty }}
                             </span>
                         </div>
@@ -1379,7 +1468,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_today_expense }}
                             </span>
                         </div>
@@ -1388,7 +1478,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRODUCED MINS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_today_produced_mins }}
                             </span>
                         </div>
@@ -1397,7 +1488,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 CPM
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ ind_today_cpm }}
                             </span>
                         </div>
@@ -1417,14 +1509,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'fabric_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="FabricKpiDetail('fabric_cost')">
@@ -1437,7 +1529,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY QTY
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ total_qty }}
                             </span>
                         </div>
@@ -1445,7 +1538,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY COST
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ total_amt }}
                             </span>
                         </div>
@@ -1453,7 +1547,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE QTY
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ till_date_qty }}
                             </span>
                         </div>
@@ -1462,7 +1557,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE COST
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ till_date_amt }}
                             </span>
                         </div>
@@ -1475,7 +1571,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block">
@@ -1489,7 +1585,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fab_today_downtime }}
                             </span>
                         </div>
@@ -1498,7 +1595,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fab_tilldate_downtime }}
                             </span>
                         </div>
@@ -1507,7 +1605,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fab_today_cost_loss }}
                             </span>
                         </div>
@@ -1516,7 +1615,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TOTAL LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fab_tilldate_cost_loss }}
                             </span>
                         </div>
@@ -1534,14 +1634,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'finishing_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="FinishingKpiDetails('wip_control_building','','','')">
@@ -1554,7 +1654,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PACKING FG
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fin_packing_fg }}
                             </span>
                         </div>
@@ -1562,7 +1663,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ISSUE TO WH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fin_issue_wh }}
                             </span>
                         </div>
@@ -1570,7 +1672,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 FINISHING WIP
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ fin_wip }}
                             </span>
                         </div>
@@ -1584,7 +1687,7 @@
 
         </div>
 
-        <div class="ol-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
             <div class="col-md-6 col-lg-12">
 
@@ -1651,14 +1754,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'despatch_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
@@ -1672,7 +1775,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 WH Inward
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ warehouse_inward }}
                             </span>
                         </div>
@@ -1680,7 +1784,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 Dispatch Qty
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ dispatch_qty }}
                             </span>
                         </div>
@@ -1688,7 +1793,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 WH Stock
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ balance }}
                             </span>
                         </div>
@@ -1708,14 +1814,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'trims_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
@@ -1729,7 +1835,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ trims_today_downtime }}
                             </span>
                         </div>
@@ -1737,7 +1844,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ trims_tilldate_downtime }}
                             </span>
                         </div>
@@ -1745,7 +1853,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ trims_today_cost_loss }}
                             </span>
                         </div>
@@ -1754,7 +1863,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TOTAL LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ trims_tilldate_cost_loss }}
                             </span>
                         </div>
@@ -1767,7 +1877,7 @@
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
@@ -1782,7 +1892,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 Cost
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ inventory_cost }}
                             </span>
                         </div>
@@ -1802,14 +1913,14 @@
     <div class="row" *ngIf="FilterData.wid_data === 'mnt_kpi' && widClicked">
 
 
-        <div class="col-md-12 col-lg-12 col-xxxl-12">
+        <div class="col-sm-12">
 
             <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
 
-        <div class="col-md-12 col-lg-6 col-xxxl-6">
+        <div class="col-lg-6 col-md-12 col-sm-12">
 
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
@@ -1823,7 +1934,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ mnt_today_downtime }}
                             </span>
                         </div>
@@ -1831,7 +1943,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ mnt_tilldate_downtime }}
                             </span>
                         </div>
@@ -1839,7 +1952,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ mnt_today_cost_loss }}
                             </span>
                         </div>
@@ -1847,7 +1961,8 @@
                             <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE LOSS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;font-size:1.2em">
+                            <span class="number d-block text-white text-center fw-medium lh-1"
+                                style="margin-top: 5px;font-size:1.2em">
                                 {{ mnt_tilldate_cost_loss }}
                             </span>
                         </div>
@@ -1863,6 +1978,7 @@
     </div>
 
 </div>
+
 
 
 <!-- CUTTING KPI DETAIL DATA -->
