@@ -4,7 +4,7 @@
             <mat-card-content>
                 <form name="filterForm" id="filterForm" autocomplete="off">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-6">
                             <div class="mb-25">
                                 <mat-form-field>
                                     <mat-label>Company</mat-label>
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="col-sm-1">
-                            <button mat-flat-button class="daxa" (click)="getData()">Filter</button>
+                            <button mat-flat-button color="warn" (click)="getData()">Filter</button>
                         </div>
 
                     </div>
@@ -82,7 +82,7 @@
 
                     <div class="big-box bg-blue grid gap-2 grid-rows-2" (click)="CuttingKpiData('cutting_kpi')">
                         <img src="assets/dashboard_icons/scissors.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">CUTTING</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">CUTTING</h6>
                     </div>
 
                 </div>
@@ -90,21 +90,21 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-indigo grid gap-2 grid-cols-2" (click)="SewingKpiData('sewing_kpi')">
                         <img fxFlex src="assets/dashboard_icons/sewing.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">SEWING</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">SEWING</h6>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-pink grid gap-2 grid-cols-2" (click)="QualityKpiData('quality_kpi')">
                         <img fxFlex src="assets/dashboard_icons/badge.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">QUALITY</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">QUALITY</h6>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-yellow grid gap-2 grid-cols-2" (click)="HrKpiData('hr_kpi')">
                         <img fxFlex src="assets/dashboard_icons/online-interview.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">HR </h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">HR </h6>
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
 
                     <div class="big-box bg-green" (click)="IndEngKpiData('ind_eng_kpi')">
                         <img src="assets/dashboard_icons/energy.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">INDUSTRIAL ENGINEERING </h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">INDUSTRIAL ENGINEERING </h6>
                     </div>
 
                 </div>
@@ -126,21 +126,21 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-purple" (click)="FabricKpiData('fabric_kpi')">
                         <img src="assets/dashboard_icons/fiber.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">FABRIC</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">FABRIC</h6>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-orange" (click)="finsihingKpiData('finishing_kpi')">
                         <img src="assets/dashboard_icons/flag.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">FINISHING</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">FINISHING</h6>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-red" (click)="DespatchKpiData('despatch_kpi')">
                         <img src="assets/dashboard_icons/delivery.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">DISPATCH</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">DISPATCH</h6>
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@
 
                     <div class="big-box bg-cyan" (click)="TrimsKpiData('trims_kpi')">
                         <img src="assets/dashboard_icons/buttons.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">TRIMS STORE</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">TRIMS STORE</h6>
                     </div>
 
                 </div>
@@ -162,14 +162,14 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-teal" (click)="MntKpiData('mnt_kpi')">
                         <img src="assets/dashboard_icons/repair-service.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">MAINTENANCE</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">MAINTENANCE</h6>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="big-box bg-sky" (click)="ManagementKpiData()">
                         <img src="assets/dashboard_icons/repair-service.png" alt="">
-                        <h5 style=" color:white; position: relative; top: -10px;">MANAGEMENT</h5>
+                        <h6 style=" color:white; position: relative; top: -10px;">MANAGEMENT</h6>
                     </div>
                 </div>
 
@@ -187,7 +187,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false">Back</button>
 
         </div>
@@ -197,12 +197,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="CuttingKpiDetail('cutting_downtime','','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         DOWN TIME
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -210,7 +210,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -218,7 +218,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -226,7 +226,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TOTAL LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -247,12 +247,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="CuttingKpiDetail('re_cuttings','','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         RE CUTTINGS / MISTAKE PANEL
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY RECUT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -260,7 +260,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE RECUT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -268,7 +268,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY RECUT %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -276,7 +276,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE RECUT %
                             </span>
                             <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
@@ -296,12 +296,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="CuttingKpiDetail('cutting_cost','','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         CUTTING COST
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PROD
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -309,7 +309,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -317,7 +317,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REVENUE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -326,7 +326,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 P/L
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -347,15 +347,15 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
                 (click)="CuttingKpiDetail('fab_utliz1','','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-black">
                         FABRIC UTILISATION
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 COST SAVINGS/EXCESS
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ fab_cost_savings }}
                             </span>
                         </div>
@@ -374,7 +374,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -383,12 +383,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         EFFICIENCY %
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY TARGET
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -396,7 +396,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY ACTUAL
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -404,7 +404,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE TARGET
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -412,7 +412,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE ACTUAL
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -432,12 +432,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="SewingKpiDetail('sewing_cost_buiding','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         SEWEING COST
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PROD
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -445,7 +445,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -453,7 +453,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REVENUE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -462,7 +462,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 P/L
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -471,7 +471,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE P/L
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -491,12 +491,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
                 (click)="SewingKpiDetail('sewing_dhu_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         DHU %
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -504,7 +504,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PASSED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -512,7 +512,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DEFECT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -520,7 +520,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DHU %
                             </span>
                             <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
@@ -528,7 +528,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE DHU %
                             </span>
                             <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
@@ -549,12 +549,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="SewingKpiDetail('sewing_rej_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         REJECTION
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -562,7 +562,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PASSED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -570,7 +570,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REJECTED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -578,7 +578,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 REJ %
                             </span>
                             <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
@@ -586,7 +586,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE REJ %
                             </span>
                             <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
@@ -606,31 +606,31 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
                 (click)="SewingKpiDetail('sewing_mis_pcs_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-black">
                         Sewing Line WIP
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 CUTTING LOADED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ cutting_loaded }}
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 PACKING FG
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ packing_fg }}
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 INLINE WIP
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ inline_wip }}
                             </span>
                         </div>
@@ -650,7 +650,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -660,12 +660,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="QualityKpiDetail('quality_downtime','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         DOWN TIME
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -673,7 +673,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -681,7 +681,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -689,7 +689,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -710,12 +710,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="QualityKpiDetail('quality_cost_datewise','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         QUALITY COST
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -723,7 +723,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -731,7 +731,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 COST
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -740,7 +740,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE COST
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -760,12 +760,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="QualityKpiDetail('quality_rft_buiding','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         RFT
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 INSPECTED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -773,7 +773,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PASSED
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -781,7 +781,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 RFT %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -789,7 +789,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE RFT %
                             </span>
                             <span class="number d-block text-center text-white fw-medium lh-1" style="margin-top: 5px;">
@@ -810,52 +810,52 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
                 (click)="SewingKpiDetail('sewing_dhu_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-black">
                         DHU %
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 INSPECTED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ qc_inspected }}
                             </span>
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 PASSED
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ qc_pass }}
                             </span>
                         </div>
 
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 DEFECT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ qc_defect }}
                             </span>
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 DHU %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ qc_dhu_perc }}
                             </span>
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 Tilldate DHU %
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ till_qc_dhu_perc }}
                             </span>
                         </div>
@@ -878,7 +878,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -888,12 +888,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="HrKpiDetail('htatr_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         ATTRITION
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -901,7 +901,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -909,7 +909,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE LEFT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -918,7 +918,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE ATR %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -940,13 +940,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="HrKpiDetail('absentism_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         ABSENTISM
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -955,7 +955,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -964,7 +964,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ABSENT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -973,7 +973,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ABSENT %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -982,7 +982,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE ABSENT %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1004,13 +1004,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-blue border-none d-block"
                 (click)="HrKpiDetail('hrunplanned_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         UN PLANNED LEAVES
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1019,7 +1019,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ABSENT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1028,7 +1028,7 @@
                         </div>
 
                         <div style="margin-right:5px">
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY PLANNED %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1037,7 +1037,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE PLANNED %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1046,7 +1046,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY UNPLANNED %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1055,7 +1055,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE UNPLANNED %
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1077,43 +1077,43 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-yellow border-none d-block"
                 (click)="HrKpiDetail('hrmmr_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-black">
                         MMR
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 STRENGTH
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ strength }}
                             </span>
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 PRESENT
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ present }}
                             </span>
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 MACHINE
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ operators_present }}
                             </span>
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-black">
                                 MMR
                             </span>
-                            <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
+                            <span class="number d-block text-black text-center fw-medium lh-1" style="margin-top: 5px;">
                                 {{ mmr }}
                             </span>
                         </div>
@@ -1132,13 +1132,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
                 (click)="HrKpiDetail('hrbudget_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         MAN POWER (vs) ACTUAL
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1147,7 +1147,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1156,7 +1156,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 BUDGET
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1165,7 +1165,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DIFF
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1189,13 +1189,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="HrKpiDetail('hrbudgetcost_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         MAN POWER COST (vs) BUDGET
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1204,7 +1204,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT COST
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1213,7 +1213,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 BUDGET COST
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1222,7 +1222,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 DIFF
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1246,7 +1246,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -1256,12 +1256,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="SewingKpiDetail('sewing_eff_buiding','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         EFFICIENCY %
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY TARGET
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1269,7 +1269,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY ACTUAL
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1277,7 +1277,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE TARGET
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1286,7 +1286,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE TARGET
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1308,13 +1308,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-orange border-none d-block"
                 (click)="HrKpiDetail('hrmmr_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         MMR
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 STRENGTH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1323,7 +1323,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRESENT
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1332,7 +1332,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 MACHINE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1341,7 +1341,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 MMR
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1362,13 +1362,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="IndEngKpiDetail('ind_eng_cpm_buiding','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         COST PER MINUTE
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PROD
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1377,7 +1377,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 EXPENSE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1386,7 +1386,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PRODUCED MINS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1395,7 +1395,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 CPM
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1420,7 +1420,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -1430,12 +1430,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="FabricKpiDetail('fabric_cost')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         FABRIC COST
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY QTY
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1443,7 +1443,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY COST
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1451,7 +1451,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE QTY
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1460,7 +1460,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE COST
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1481,13 +1481,13 @@
 
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         DOWNTIME
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1496,7 +1496,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1505,7 +1505,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1514,7 +1514,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TOTAL LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1537,7 +1537,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -1547,12 +1547,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="FinishingKpiDetails('wip_control_building','','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         WIP CONTROL
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 PACKING FG
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1560,7 +1560,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 ISSUE TO WH
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1568,7 +1568,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 FINISHING WIP
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1592,13 +1592,13 @@
                 <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-pink border-none d-block"
                     (click)="FinishingKpiDetails('cost_per_garment_building','','','')">
                     <mat-card-content>
-                        <h5 class="text-white">
+                        <h6 style="text-align:center" class="text-white">
                             COST PER GARMENT
-                        </h5>
+                        </h6>
                         <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                             <div>
-                                <span class="sub-title d-block text-white">
+                                <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                     PROD
                                 </span>
                                 <span class="number d-block text-white text-center fw-medium lh-1"
@@ -1608,7 +1608,7 @@
                             </div>
 
                             <div>
-                                <span class="sub-title d-block text-white">
+                                <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                     REVENUE
                                 </span>
                                 <span class="number d-block text-white text-center fw-medium lh-1"
@@ -1618,7 +1618,7 @@
                             </div>
 
                             <div>
-                                <span class="sub-title d-block text-white">
+                                <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                     EXPENSE
                                 </span>
                                 <span class="number d-block text-white text-center fw-medium lh-1"
@@ -1628,7 +1628,7 @@
                             </div>
 
                             <div>
-                                <span class="sub-title d-block text-white">
+                                <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                     PL
                                 </span>
                                 <span class="number d-block text-white text-center fw-medium lh-1"
@@ -1653,7 +1653,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -1664,12 +1664,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="DespatchKpiDetail('despatch_wip')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         WIP CONTROL
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 WH Inward
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1677,7 +1677,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 Dispatch Qty
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1685,7 +1685,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 WH Stock
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1710,7 +1710,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -1721,12 +1721,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="TrimsKpiDetail('trims_downtime','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         DOWN TIME
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1734,7 +1734,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1742,7 +1742,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1751,7 +1751,7 @@
                         </div>
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TOTAL LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1773,13 +1773,13 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-green border-none d-block"
                 (click)="TrimsKpiDetail('trims_unused_group','','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         Un Used Inventory
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
 
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 Cost
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1804,7 +1804,7 @@
 
         <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="widClicked=false" style="float:right; margin-bottom:10px;">Back</button>
 
         </div>
@@ -1815,12 +1815,12 @@
             <mat-card class="daxa-card sales-overview-card mb-25 border-radius bg-primary border-none d-block"
                 (click)="MntKpiDetail('mnt_downtime','')">
                 <mat-card-content>
-                    <h5 class="text-white">
+                    <h6 style="text-align:center" class="text-white">
                         DOWN TIME
-                    </h5>
+                    </h6>
                     <div class="sales-overview-info d-flex align-items-center justify-content-between">
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1828,7 +1828,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1836,7 +1836,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TODAY LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1844,7 +1844,7 @@
                             </span>
                         </div>
                         <div>
-                            <span class="sub-title d-block text-white">
+                            <span style="font-size:0.8em" class=" sub-title d-block text-white">
                                 TILLDATE LOSS
                             </span>
                             <span class="number d-block text-white text-center fw-medium lh-1" style="margin-top: 5px;">
@@ -1873,7 +1873,7 @@
 
         <div *ngIf="!CuttingDownTimeClicked" class="text-end mt-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button color="warn" matStepperNext style="float:right; margin-bottom:10px;"
                 (click)="CuttingDownTimeDatewiseClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -1957,8 +1957,9 @@
 
             <div class="text-end mt-2">
 
-                <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px; margin-top:10px"
-                    class="daxa" (click)="CuttingDownTimeClicked = false;widClicked=true">Close</button>
+                <button mat-flat-button mat-flat-button matStepperNext
+                    style="float:right; margin-bottom:10px; margin-top:10px" color="warn"
+                    (click)="CuttingDownTimeClicked = false;widClicked=true">Close</button>
 
             </div>
 
@@ -2049,7 +2050,7 @@
 
     <div class="col-md-12">
 
-        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
             (click)="CuttingCostDetClicked = false;widClicked=true">Close</button>
 
     </div>
@@ -2193,7 +2194,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="CuttingCostDeDatewisetClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="CuttingCostDeDatewisetClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -2329,7 +2330,7 @@
 
     <div class="col-md-12 col-lg-12 col-xxxl-12">
 
-        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
             (click)="ReCuttingClicked = false;widClicked=true">Close</button>
 
     </div>
@@ -2463,7 +2464,7 @@
 
     <div class="col-md-12 col-lg-12 col-xxxl-12" *ngIf="!CuttingFabUtlzClicked2">
 
-        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+        <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
             (click)="CuttingFabUtlzClicked1 = false;widClicked=true">Close</button>
 
     </div>
@@ -2569,7 +2570,7 @@
 
         <div *ngIf="!CuttingFabUtlzClicked3" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="CuttingFabUtlzClicked2 = false;widClicked=true">Close</button>
 
         </div>
@@ -2676,7 +2677,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="CuttingFabUtlzClicked3 = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="CuttingFabUtlzClicked3 = false;widClicked=true">Close</button>
 
         </div>
@@ -2788,7 +2789,7 @@
 
         <div *ngIf="!SewingEffFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingEffBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -2983,7 +2984,7 @@
 
         <div *ngIf="!SewingEffLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingEffFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -3188,7 +3189,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingEffLineClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingEffLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -3402,7 +3403,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingCostBuildingClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingCostBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -3536,7 +3537,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingCostFloorClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingCostFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -3668,7 +3669,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingCostLineClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingCostLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -3806,7 +3807,7 @@
 
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingDhuBuildingClicked = false;widClicked=true"></rc-btn> -->
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingDhuBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -3933,7 +3934,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingDhuFloorClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingDhuFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4057,7 +4058,7 @@
         (activate)="SewingDhuLineClicked = false;widClicked=true"></rc-btn> -->
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingDhuLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4180,7 +4181,7 @@
 
         <div *ngIf="!SewingRejFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingRejBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4297,7 +4298,7 @@
 
         <div *ngIf="!SewingRejLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingRejFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4418,7 +4419,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingRejLineClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingRejLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4541,7 +4542,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingMisPcsBuildingClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingMisPcsBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4606,7 +4607,7 @@
             <!-- <rc-btn label="Close" icon="close" type="warn" size="small"
         (activate)="SewingMisPcsFloorClicked = false;widClicked=true"></rc-btn> -->
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingMisPcsFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4670,7 +4671,7 @@
         (activate)="SewingMisPcsLineClicked = false;widClicked=true"></rc-btn> -->
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingMisPcsLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4736,7 +4737,7 @@
         (activate)="SewingMisPcsLotClicked = false;widClicked=true"></rc-btn> -->
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="SewingMisPcsLotClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4817,7 +4818,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityDetClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -4941,7 +4942,7 @@
         <div *ngIf="!QualityDownTimeClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityDownTimeDatewiseClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5024,7 +5025,7 @@
         <div class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityDownTimeClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5114,7 +5115,7 @@
 
         <div *ngIf="!QualityRftFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityRftBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5216,7 +5217,7 @@
 
         <div *ngIf="!QualityRftLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityRftFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5315,7 +5316,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityRftLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5419,7 +5420,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FabricCostClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5539,7 +5540,7 @@
 
         <div *ngIf="!HrAtrFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrAtrBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5599,7 +5600,7 @@
 
         <div *ngIf="!HrAtrLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrAtrFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5657,7 +5658,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrAtrLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5719,7 +5720,7 @@
 
         <div *ngIf="!HrAbsentFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrAbsentBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5805,7 +5806,7 @@
         <div *ngIf="!HrAbsentLineClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrAbsentFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5885,7 +5886,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrAbsentLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -5971,7 +5972,7 @@
         <div *ngIf="!HrUnplannedFloorClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrUnplannedBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6101,7 +6102,7 @@
 
         <div *ngIf="!HrUnplannedLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrUnplannedFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6227,7 +6228,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrUnplannedLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6357,7 +6358,7 @@
 
         <div *ngIf="!HrMmrFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrMmrBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6423,7 +6424,7 @@
         <div *ngIf="!HrMmrLineClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrMmrFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6486,7 +6487,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrMmrLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6553,7 +6554,7 @@
 
         <div *ngIf="!HrBudgetFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrBudgetBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6618,7 +6619,7 @@
 
         <div *ngIf="!HrBudgetLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrBudgetFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6683,7 +6684,7 @@
         <div class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrBudgetLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6751,7 +6752,7 @@
 
         <div *ngIf="!HrBudgetCostFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrBudgetCostBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6816,7 +6817,7 @@
 
         <div *ngIf="!HrBudgetCostLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrBudgetCostFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6879,7 +6880,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="HrBudgetCostLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -6956,7 +6957,7 @@
         <div *ngIf="!FinishingWipFloorClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FinishingWipBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7018,7 +7019,7 @@
 
         <div *ngIf="!FinishingWipLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FinishingWipFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7080,7 +7081,7 @@
 
         <div *ngIf="!FinishingWipLotClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FinishingWipLineClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7142,7 +7143,7 @@
         <div class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FinishingWipLotClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7226,7 +7227,7 @@
         <div *ngIf="!TrimsDownTimeClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="TrimsDownTimeDatewiseClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7308,7 +7309,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="TrimsDownTimeClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7409,7 +7410,7 @@
 
         <div *ngIf="!MntDownTimeClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="MntDownTimeDatewiseClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7491,7 +7492,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="MntDownTimeClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7589,7 +7590,7 @@
 
         <div *ngIf="!IndEngCpmFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="IndEngCpmBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7704,7 +7705,7 @@
 
         <div *ngIf="!IndEngCpmLineClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="IndEngCpmFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -7821,7 +7822,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="IndEngCpmLineClicked = false;widClicked=true">Close</button>
 
 
@@ -7952,7 +7953,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="ManagementKPIClicked = false;widClicked=false">Close</button>
 
         </div>
@@ -8193,7 +8194,7 @@
 
         <div *ngIf="!FinsingCsgFloorClicked" class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FinsingCsgBuildingClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -8313,7 +8314,7 @@
         <div class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="FinsingCsgFloorClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -8451,7 +8452,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="DespatchWipClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -8519,7 +8520,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="QualityCostDatewiseClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -8626,7 +8627,7 @@
         <div *ngIf="!TrimsUnusedItemClicked" class="gap-2">
 
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="TrimsUnusedGroupClicked = false;widClicked=true">Close</button>
 
         </div>
@@ -8682,7 +8683,7 @@
 
         <div class="gap-2">
 
-            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" class="daxa"
+            <button mat-flat-button matStepperNext style="float:right; margin-bottom:10px;" color="warn"
                 (click)="TrimsUnusedItemClicked = false;widClicked=true">Close</button>
 
         </div>

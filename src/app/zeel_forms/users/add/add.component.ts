@@ -14,6 +14,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { NgIf } from '@angular/common';
 import { HttpService } from '../../../services/http.service';
 
 
@@ -24,7 +25,7 @@ import { Subject } from 'rxjs';
 @Component({
     selector: 'app-users',
     standalone: true,
-    imports: [MatCardModule, MatMenuModule, MatButtonModule, RouterLink, FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule, FileUploadModule, MatRadioModule, MatCheckboxModule],
+    imports: [MatCardModule, MatMenuModule, NgIf, MatButtonModule, RouterLink, FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule,  FileUploadModule, MatRadioModule, MatCheckboxModule],
     templateUrl: './add.component.html',
     styleUrl: './add.component.scss'
 })

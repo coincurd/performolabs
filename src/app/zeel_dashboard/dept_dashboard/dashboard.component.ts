@@ -393,7 +393,7 @@ export class ZeelDashboardComponent {
     @ViewChild(MatSort, { static: true }) sort: MatSort;
 
     FilterData: any = {
-        cmp_id: '2',
+        cmp_id: '1',
         to_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
         from_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
         detail_date: this.DatePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss'),
