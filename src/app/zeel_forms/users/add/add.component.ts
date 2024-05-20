@@ -25,7 +25,7 @@ import { Subject } from 'rxjs';
 @Component({
     selector: 'app-users',
     standalone: true,
-    imports: [MatCardModule, MatMenuModule, NgIf, MatButtonModule, RouterLink, FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule,  FileUploadModule, MatRadioModule, MatCheckboxModule],
+    imports: [MatCardModule, MatMenuModule, NgIf, MatButtonModule, RouterLink, FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, FileUploadModule, MatRadioModule, MatCheckboxModule],
     templateUrl: './add.component.html',
     styleUrl: './add.component.scss'
 })
@@ -34,38 +34,40 @@ export class AddUsersComponent {
     private _unsubscribeAll: Subject<any>;
 
 
-    UsersFormData : any = {};
-    UsersFormSubmitted : boolean = false;
+    UsersFormData: any = {
+        status: '1'
+    };
+    UsersFormSubmitted: boolean = false;
 
-    @ViewChild('UsersForm', { read: NgForm }) UsersForm: NgForm;
-
-    constructor( private _activatedRoute: ActivatedRoute,
+    constructor(private _activatedRoute: ActivatedRoute,
         private HttpService: HttpService,
         private _router: Router,) {
 
         this._unsubscribeAll = new Subject();
 
 
-        this._activatedRoute.queryParamMap.pipe(takeUntil(this._unsubscribeAll)).subscribe(params => {
-          if (params.has('id')) {
-            // this.UsersFormData.style_id = params.get('style_id');
-            // this.UsersFormData.cmp_id = params.get('cmp_id');
-            this.HttpService.postData('masters/getUsers/' + params.get('id'),{}).subscribe((response : any) => {
-              this.UsersFormData = response.result;
-            });
 
-          }
+        this._activatedRoute.queryParamMap.pipe(takeUntil(this._unsubscribeAll)).subscribe(params => {
+            if (params.has('id')) {
+                // this.UsersFormData.style_id = params.get('style_id');
+                // this.UsersFormData.cmp_id = params.get('cmp_id');
+                this.HttpService.postData('masters/getUsers/' + params.get('id'), {}).subscribe((response: any) => {
+                    this.UsersFormData = response.result;
+                });
+
+            }
         });
 
     }
 
+    save1() { }
 
-  save() {
-    this.HttpService.postData('masters/addUsers', this.UsersFormData).pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
-        this._router.navigateByUrl('/users/list');
-      this.UsersFormSubmitted = false;
-    });
+    save() {
+        this.HttpService.postData('masters/addUsers', this.UsersFormData).pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
+            this._router.navigateByUrl('/users/list');
+            this.UsersFormSubmitted = false;
+        });
 
-  }
+    }
 
 }

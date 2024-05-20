@@ -7,7 +7,6 @@
 <br>
 
 
-
 <div class="users-table">
     <div class="table-responsive">
         <table mat-table [dataSource]="dataSource" matSort>
@@ -38,7 +37,7 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header style="min-width: 30px"> Edit </th>
                 <td mat-cell *matCellDef="let row">
 
-                    <button mat-button [routerLink]="[ '/users' ]" [queryParams]="{ id: row.id}">
+                    <button mat-flat-button color="primary" [routerLink]="[ '/users' ]" [queryParams]="{ id: row.id}">
                         Edit
                     </button>
 

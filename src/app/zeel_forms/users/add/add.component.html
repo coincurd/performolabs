@@ -1,4 +1,14 @@
 <div class="row">
+
+    <div>
+        <button mat-flat-button matStepperNext class="accent" style="float: right;"
+            routerLink="/users/list">List</button>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
     <div class="col-xxl-12 col-xxxl-12">
         <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block">
             <mat-card-header>
@@ -9,7 +19,7 @@
                 </mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <form name="UsersForm" id="UsersForm" autocomplete="off">
+                <form name="UsersForm" id="UsersForm" #UsersForm="ngForm" autocomplete="off">
 
                     <div class="row">
 
@@ -22,14 +32,25 @@
                                     <mat-label>
                                         User Name
                                     </mat-label>
-                                    <input matInput type="email" id="username" name="username" required
+                                    <input matInput type="email" id="username" name="username" required type="email"
+                                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #username="ngModel"
                                         [(ngModel)]="UsersFormData.username">
-
                                 </mat-form-field>
+
+                                <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                    class="error text-danger">
+                                    <div *ngIf="username.errors?.['required']">
+                                        Username is required.
+                                    </div>
+                                    <div *ngIf="username.errors?.['pattern']">
+                                        Username not valid
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class=" col-sm-6">
                             <div class="mb-25">
                                 <label class="main-label d-block lh-1 text-black">
                                     Display Name
@@ -38,9 +59,16 @@
                                     <mat-label>
                                         Display Name
                                     </mat-label>
-                                    <input matInput id="display_name" name="display_name" required
+                                    <input matInput id="display_name" name="display_name" required #name="ngModel"
                                         [(ngModel)]="UsersFormData.display_name">
                                 </mat-form-field>
+
+                                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error text-danger">
+                                    <div *ngIf="name.errors?.['required']">
+                                        Name is required.
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
@@ -69,8 +97,19 @@
                                         Password
                                     </mat-label>
                                     <input matInput id="password" name="password" [(ngModel)]="UsersFormData.password"
-                                        required>
+                                        #password="ngModel" required minlength="4">
                                 </mat-form-field>
+
+                                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                    class="error text-danger">
+                                    <div *ngIf="password.errors?.['required']">
+                                        Password Required
+                                    </div>
+                                    <div *ngIf="password.errors?.['minlength']">
+                                        Minimum 4 Chars required
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
@@ -84,8 +123,8 @@
                             </mat-form-field>
                         </div>
                         <div class="col-sm-6">
-                            <button (click)="save(); UsersFormSubmitted=true" [disabled]="UsersFormSubmitted "
-                                mat-flat-button class="daxa">
+                            <button (click)="save(); UsersFormSubmitted=true"
+                                [disabled]="UsersFormSubmitted || UsersForm.invalid " mat-flat-button class="daxa">
                                 Update
                             </button>
                         </div>
