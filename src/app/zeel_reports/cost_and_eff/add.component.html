@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-xxl-12 col-xxxl-12">
+
+
+        <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block mt-0">
+            <mat-card-header>
+                <form name="ConfigForm" id="ConfigForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="mb-25">
+                                <mat-form-field>
+                                    <mat-label>Company</mat-label>
+                                    <mat-select id="cmp_id" name="cmp_id" [(ngModel)]="FilterData.cmp_id"
+                                        (selectionChange)="getData();getStyles()">
+                                        <mat-option *ngFor="let c of CompanySB" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-25">
+                                <mat-form-field appearance="fill">
+                                    <mat-label> Date</mat-label>
+                                    <input matInput (dateChange)="getData()" [matDatepicker]="picker1" id="date"
+                                        name="date" [(ngModel)]="FilterData.date">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-25">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Line</mat-label>
+                                    <mat-select id="line_id" name="line_id" [(ngModel)]="FilterData.line_id"
+                                        multiple="true" (selectionChange)="getData()">
+                                        <mat-option *ngFor="let c of Styles" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <h3 style="text-align: center;margin-bottom:4px">Cost & Efficiency Report for {{ this.FilterData.date }}
+                </h3>
+
+
+            </mat-card-header>
+            <mat-card-content style="overflow-x: scroll;">
+
+
+                <table>
+                    <tr>
+                        <th>FLOOR </th>
+                        <th>LINE</th>
+                        <th>STYLE</th>
+                        <th>MAN POW (D)</th>
+                        <th>MAN POW (ID)</th>
+                        <th>TOTAL</th>
+                        <th>MAN POW COST</th>
+                        <th>SAM</th>
+                        <th>PCS RATE</th>
+                        <th>TARGET FOR BEP</th>
+                        <th>PACKING</th>
+                        <th>CUMULATIVE</th>
+                        <th>DHU %</th>
+                        <th>LOSS TIME (MIN)</th>
+                        <th>TARGET ACH </th>
+                        <th>TARGET ACH %</th>
+                        <th>TARGET COST</th>
+                        <th>ACHIEVE COST</th>
+                        <th>DIFF</th>
+                        <th>ACTUAL EFF (%)</th>
+                    </tr>
+                    <tr *ngFor="let d of dpr_report_data"
+                        [class]="d.floor_name === 'TOTAL' || d.floor_name === 'GRAND TOTAL' ? 'total_row' : ''">
+                        <td><b> {{ d.floor_name }} </b></td>
+                        <td><b> {{ d.line_name }} </b></td>
+                        <td>{{ d.style }}</td>
+                        <td>{{ d.direct_man_pow }}</td>
+                        <td>{{ d.ind_man_pow }}</td>
+                        <td>{{ d.no_of_man_days }}</td>
+                        <td>{{ d.today_expense }}</td>
+                        <td>{{ d.sam }}</td>
+                        <td> {{ d.cm }}</td>
+                        <td>{{ d.target_bep }}</td>
+                        <td>{{ d.prod_qty }}</td>
+                        <td>{{ d.tilldate_prod_qty }}</td>
+                        <td>{{ d.dhu_perc }}</td>
+                        <td>{{ d.lost_time }}</td>
+                        <td>{{ d.tar_achive }}</td>
+                        <td>{{ d.tar_achive_perc }}</td>
+                        <td>{{ d.tar_cost }}</td>
+                        <td>{{ d.today_expense }}</td>
+                        <td>{{ d.diff }}</td>
+                        <td>{{ d.today_eff }}</td>
+
+                    </tr>
+                </table>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

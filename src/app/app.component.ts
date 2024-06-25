@@ -20,7 +20,7 @@ import { CustomizerSettingsService } from './customizer-settings/customizer-sett
         Location, {
             provide: LocationStrategy,
             useClass: PathLocationStrategy
-        }
+        },
     ]
 })
 export class AppComponent {

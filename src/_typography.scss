@@ -141,7 +141,7 @@ blockquote {
                 .mat-mdc-card-title {
                     .search-box {
                         width: 350px;
-            
+
                         i {
                             transform: translateY(-50%);
                             color: var(--blackColor);
@@ -190,7 +190,7 @@ blockquote {
                 .mat-mdc-card-subtitle {
                     display: flex;
                     align-items: center;
-                    
+
                     .mat-mdc-button {
                         &.card-header-menu-btn {
                             height: auto;
@@ -198,7 +198,7 @@ blockquote {
                             padding: 0 18px 0 0;
                             color: var(--blackColor);
                             font-size: 15px !important;
-    
+
                             &::after {
                                 top: 50%;
                                 right: -4px;
@@ -220,7 +220,7 @@ blockquote {
                     }
                     .search-box {
                         width: 360px;
-            
+
                         i {
                             transform: translateY(-50%);
                             color: var(--blackColor);
@@ -546,7 +546,7 @@ blockquote {
             .table-responsive {
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
-                
+
                 .mdc-data-table__table {
                     overflow: hidden;
                 }
@@ -638,7 +638,7 @@ blockquote {
                 }
                 .mat-mdc-checkbox {
                     top: -1.6px;
-                    
+
                     .mdc-checkbox {
                         padding: 0;
                         margin: 0;
@@ -1099,7 +1099,7 @@ blockquote {
 }
 .mat-mdc-paginator {
     background-color: transparent !important;
-    
+
     .mat-mdc-paginator-outer-container {
         display: block;
 
@@ -1146,6 +1146,7 @@ blockquote {
             .mat-mdc-form-field-infix {
                 min-height: auto;
                 width: 100px;
+                max-height: 6px;
                 padding: {
                     top: 0;
                     bottom: 0;
@@ -1232,7 +1233,7 @@ blockquote {
         background-color: var(--pagination-bg);
         border: var(--pagination-border-width) solid var(--pagination-border-color);
         transition: var(--transition);
-    
+
         &:hover, &.active {
             z-index: 2;
             color: var(--pagination-hover-color);
@@ -1318,7 +1319,7 @@ blockquote {
             .mat-mdc-card-content {
                 .apexcharts-tooltip {
                     border-radius: 0 !important;
-                    
+
                     * {
                         border-radius: 0 !important;
                     }
@@ -1452,7 +1453,7 @@ blockquote {
     }
     .mat-mdc-checkbox, .mat-mdc-button, .fc, .mat-calendar, .file-uploader, .mat-mdc-tab-labels, .alert, .badge, .mat-button-toggle-group, .mat-mdc-outlined-button, .mat-mdc-unelevated-button, .mdc-evolution-chip-set, .example-boundary, .example-container, .example-list, .mat-expansion-panel, .pagination-list, .pagination, .mat-mdc-progress-bar {
         border-radius: 0 !important;
-        
+
         * {
             border-radius: 0 !important;
         }
@@ -1503,10 +1504,10 @@ blockquote {
     .mat-mdc-card {
         &.daxa-card {
             padding: 15px;
-    
+
             .mat-mdc-card-header {
                 margin-bottom: 15px;
-    
+
                 .mat-mdc-card-header-text {
                     .mat-mdc-card-title {
                         .search-box {
@@ -1533,7 +1534,7 @@ blockquote {
                         }
                         .buttons-list {
                             margin-bottom: -8px;
-                            
+
                             .mat-mdc-button {
                                 margin: {
                                     right: 8px;
@@ -1552,7 +1553,7 @@ blockquote {
                         .info-buttons-list {
                             .mat-mdc-button {
                                 margin-left: 15px;
-    
+
                                 i {
                                     font-size: 16px;
                                 }
@@ -1686,7 +1687,7 @@ blockquote {
                     width: 32px;
                     height: 32px;
                     font-size: 15px;
-    
+
                     i {
                         font-size: 18px;
                     }
@@ -1712,7 +1713,7 @@ blockquote {
         }
         .mat-mdc-paginator-range-actions {
             margin-top: 10px;
-            
+
             .mat-mdc-paginator-range-label {
                 margin: 0 10px 0 0;
                 font-size: 14px;
@@ -1734,7 +1735,7 @@ blockquote {
     .mat-mdc-card {
         &.daxa-card {
             padding: 20px;
-            
+
             .mat-mdc-card-content {
                 .mat-mdc-table {
                     .mat-mdc-table {

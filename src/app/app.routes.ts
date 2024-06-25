@@ -217,6 +217,10 @@ import { ProdcutionConfigComponent } from  './zeel_forms/production_config/produ
 import { AddCsConfigComponent } from  './zeel_forms/cost_center_config/add/add.component';
 import { CsConfigComponent } from  './zeel_forms/cost_center_config/cost_center_config.component';
 
+import { ReportComponent } from './zeel_reports/zeel_reports.component';
+import { DPRreportComponent } from './zeel_reports/dpr/add.component';
+import { CostAndEffreportComponent } from './zeel_reports/cost_and_eff/add.component';
+
 // for zeel
 // for zeel
 
@@ -287,6 +291,15 @@ export const routes: Routes = [
         canActivate : [ AuthGuard ],
         children: [
             {path: '', component: AddCsConfigComponent},
+        ]
+    },
+    {
+        path: 'zeel_reports',
+        component: ReportComponent,
+        canActivate : [ AuthGuard ],
+        children: [
+            {path: 'dpr', component: DPRreportComponent},
+            {path: 'cost_eff', component: CostAndEffreportComponent},
         ]
     },
     // for zeel

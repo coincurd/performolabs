@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-xxl-12 col-xxxl-12">
+
+
+        <mat-card class="daxa-card add-user-card mb-25 border-radius bg-white border-none d-block mt-0">
+            <mat-card-header>
+                <form name="ConfigForm" id="ConfigForm" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="mb-25">
+                                <mat-form-field>
+                                    <mat-label>Company</mat-label>
+                                    <mat-select id="cmp_id" name="cmp_id" [(ngModel)]="FilterData.cmp_id"
+                                        (selectionChange)="getData();getStyles()">
+                                        <mat-option *ngFor="let c of CompanySB" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-25">
+                                <mat-form-field appearance="fill">
+                                    <mat-label> Date</mat-label>
+                                    <input matInput (dateChange)="getData()" [matDatepicker]="picker1" id="date"
+                                        name="date" [(ngModel)]="FilterData.date">
+                                    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="mb-25">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Styles</mat-label>
+                                    <mat-select id="style_id" name="style_id" [(ngModel)]="FilterData.style_id"
+                                        multiple="true" (selectionChange)="getData()">
+                                        <mat-option *ngFor="let c of Styles" [value]="c.value">{{ c.name
+                                            }}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <h3 style="text-align: center;margin-bottom:4px">Daily Production Report for {{ this.FilterData.date }}
+                </h3>
+
+
+            </mat-card-header>
+            <mat-card-content style="overflow-x: scroll;">
+
+
+                <table>
+                    <tr>
+                        <th>STYLE</th>
+                        <th>COLOUR</th>
+                        <th>OREDER QTY</th>
+                        <th>FAB CON</th>
+                        <th>REQ FABRIC</th>
+                        <th>RCVD FABRIC</th>
+                        <th>BALANCE TO RCVD</th>
+                        <th>ISSUE TO CUTTING</th>
+                        <th>STOCK FABRIC</th>
+                        <th>TODAY CUT</th>
+                        <th>TOTAL CUT</th>
+                        <th>BAL TO CUT</th>
+                        <th>TODAY LOADING</th>
+                        <th>TOTAL LOADING</th>
+                        <th>CUTTING WIP</th>
+                        <th>TODAY SEW</th>
+                        <th>TOTAL SEW</th>
+                        <th>SEWING WIP</th>
+                        <th>TODAY PACKING</th>
+                        <th>TOTAL PACKING</th>
+                        <th>PACKING WIP</th>
+                    </tr>
+                    <tr *ngFor="let d of dpr_report_data"
+                        [class]="d.style_no === 'TOTAL' || d.style_no === 'GRAND TOTAL' ? 'total_row' : ''">
+                        <td><b> {{ d.style_no }} </b></td>
+                        <td><b> {{ d.color }} </b></td>
+                        <td>{{ d.order_qty }}</td>
+                        <td>{{ d.fabcons }}</td>
+                        <td>{{ d.fabreq }}</td>
+                        <td>{{ d.fabrec }}</td>
+                        <td>{{ d.balance }}</td>
+                        <td> - </td>
+                        <td>{{ d.stock_fabric }}</td>
+                        <td>{{ d.today_cutting }}</td>
+                        <td>{{ d.total_cutting }}</td>
+                        <td>{{ d.bal_to_cut }}</td>
+                        <td>{{ d.today_load }}</td>
+                        <td>{{ d.total_load }}</td>
+                        <td>{{ d.cutting_wip }}</td>
+                        <td>{{ d.today_sew }}</td>
+                        <td>{{ d.total_sew }}</td>
+                        <td>{{ d.sew_wip }}</td>
+                        <td>{{ d.today_pack }}</td>
+                        <td>{{ d.today_pack }}</td>
+                        <td>{{ d.pack_wip }}</td>
+
+
+                    </tr>
+                </table>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
