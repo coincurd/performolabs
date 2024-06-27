@@ -12,11 +12,12 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { HttpService } from '../../../services/http.service';
+import {Sort, MatSortModule} from '@angular/material/sort';
 
 @Component({
     selector: 'app-list',
     standalone: true,
-    imports: [MatCardModule, MatMenuModule, MatButtonModule, RouterLink, MatTableModule, MatPaginatorModule, NgIf, MatCheckboxModule, MatTooltipModule],
+    imports: [MatCardModule, MatMenuModule, MatSortModule, MatButtonModule, RouterLink, MatTableModule, MatPaginatorModule, NgIf, MatCheckboxModule, MatTooltipModule],
     templateUrl: './list.component.html',
     styleUrl: './list.component.scss'
 })

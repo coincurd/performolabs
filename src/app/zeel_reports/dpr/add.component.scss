@@ -2,6 +2,7 @@
 table {
     border-collapse: collapse;
     overflow-x: scroll;
+    max-height: 38vw;
   }
 
   th {
@@ -12,6 +13,7 @@ table {
     font-size: 0.9em;
     color: #005280;
     background: rgb(255 232 183);
+    position: sticky;
   }
 
   td {
@@ -27,4 +29,13 @@ table {
     background-color:rgb(255 232 183 / 16%);
     font-weight: 600;
   }
+
+  th[scope="row"], thead tr {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+
+
 
