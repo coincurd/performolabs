@@ -29,7 +29,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <!-- <div class="col-sm-4">
                             <div class="mb-25">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Line</mat-label>
@@ -40,7 +40,7 @@
                                     </mat-select>
                                 </mat-form-field>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
 
@@ -49,31 +49,31 @@
 
 
             </mat-card-header>
-            <mat-card-content style="overflow-x: scroll;">
+            <mat-card-content style="overflow-x: scroll;max-height: 570px;">
 
 
                 <table>
                     <tr>
-                        <th>FLOOR </th>
-                        <th>LINE</th>
-                        <th>STYLE</th>
-                        <th>MAN POW (D)</th>
-                        <th>MAN POW (ID)</th>
-                        <th>TOTAL</th>
-                        <th>MAN POW COST</th>
-                        <th>SAM</th>
-                        <th>PCS RATE</th>
-                        <th>TARGET FOR BEP</th>
-                        <th>PACKING</th>
-                        <th>CUMULATIVE</th>
-                        <th>DHU %</th>
-                        <th>LOSS TIME (MIN)</th>
-                        <th>TARGET ACH </th>
-                        <th>TARGET ACH %</th>
-                        <th>TARGET COST</th>
-                        <th>ACHIEVE COST</th>
-                        <th>DIFF</th>
-                        <th>ACTUAL EFF (%)</th>
+                        <th scope="row">FLOOR </th>
+                        <th scope="row">LINE</th>
+                        <th scope="row">STYLE</th>
+                        <th scope="row">MAN POW (D)</th>
+                        <th scope="row">MAN POW (ID)</th>
+                        <th scope="row">TOTAL</th>
+                        <th scope="row">MAN POW COST</th>
+                        <th scope="row">SAM</th>
+                        <th scope="row">PCS RATE</th>
+                        <th scope="row">TARGET FOR BEP</th>
+                        <th scope="row">PACKING</th>
+                        <th scope="row">CUMULATIVE</th>
+                        <th scope="row">DHU %</th>
+                        <th scope="row">LOSS TIME (MIN)</th>
+                        <th scope="row">TARGET ACH </th>
+                        <th scope="row">TARGET ACH %</th>
+                        <th scope="row">TARGET COST</th>
+                        <th scope="row">ACHIEVE COST</th>
+                        <th scope="row">DIFF</th>
+                        <th scope="row">ACTUAL EFF (%)</th>
                     </tr>
                     <tr *ngFor="let d of dpr_report_data"
                         [class]="d.floor_name === 'TOTAL' || d.floor_name === 'GRAND TOTAL' ? 'total_row' : ''">

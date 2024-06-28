@@ -28,3 +28,9 @@ table {
     font-weight: 600;
   }
 
+  th[scope="row"], thead tr {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
